@@ -34,17 +34,20 @@ public class PLoc {
 
             boolean auxGrado=false;
             boolean auxMinutos=false;
+            boolean auxPos=false;
 
+            if(p.getPos() != 'N' && p.getPos() != 'S'){
+                auxPos=true;
+            }
+
+            if(p.getMinutos()<0 || p.getMinutos()>59 ){
+                auxMinutos=true;
+            }
 
             if(p.getGrados()<0 || p.getGrados()>90 ){
                 auxGrado=true;
             }
-            if(p.getMinutos()<0 || p.getMinutos()>59 ){
-                auxMinutos=true;
-            }
-            if(p.getPos() != 'N' && p.getPos() != 'S'){
-                auxPos=true;
-            }
+
             if(auxGrado == true){
                 throw new CoordenadaExcepcion("Latitud grados "+p.getGrados());
             }else{
@@ -98,8 +101,24 @@ public class PLoc {
         return pais;
     }
 
-    public String getCiudad(){
-        return ciudad;
+    public String getCiudad(){ return ciudad; }
+
+    public void setContinente(String c){
+        if(c!=null){
+            continente=c;
+        }
+    }
+
+    public void setPais(String p){
+        if(p!=null){
+            pais=p;
+        }
+    }
+
+    public void setCiudad(String c){
+        if(c!=null){
+            ciudad=c;
+        }
     }
 
     public Coordenada getLatitud(){
@@ -111,7 +130,16 @@ public class PLoc {
     }
 
     public double[] getGps(){
-        Gps();
+        gps = new double [2];
+
+        gps[0] = latitud.getGrados() + latitud.getMinutos() / 60.0;
+        if(latitud.getPos() == 'S'){
+            gps[0] = -gps[0];
+        }
+        gps[1] = longitud.getGrados() + longitud.getMinutos() / 60.0;
+        if(longitud.getPos() == 'O'){
+            gps[1] = -gps[1];
+        }
         return gps;
     }
 
@@ -139,19 +167,6 @@ public class PLoc {
                 longitud.getGrados() + " " + longitud.getMinutos() + " " + longitud.getPos());
     }
 
-    public void Gps(){
-        gps = new double [2];
-
-        gps[0] = latitud.getGrados() + latitud.getMinutos() / 60.0;
-        if(latitud.getPos() == 'S'){
-            gps[0] = -gps[0];
-        }
-        gps[1] = longitud.getGrados() + longitud.getMinutos() / 60.0;
-        if(longitud.getPos() == 'O'){
-            gps[1] = -gps[1];
-        }
-    }
-
     public void escribeInfoGps(){
 
         String f = "";
@@ -176,7 +191,15 @@ public class PLoc {
 
         gps = new double [2];
 
-        Gps();
+        gps[0] = latitud.getGrados() + latitud.getMinutos() / 60.0;
+        if(latitud.getPos() == 'S'){
+            gps[0] = -gps[0];
+        }
+        gps[1] = longitud.getGrados() + longitud.getMinutos() / 60.0;
+        if(longitud.getPos() == 'O'){
+            gps[1] = -gps[1];
+        }
+
         f+=mrf(gps[0])+" - "+mrf(gps[1]);
         System.out.println(f);
     }
