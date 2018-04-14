@@ -1,136 +1,199 @@
 import java.io.*;
 
 public class Atlas {
+	//Variables privadas
     private PLoc[][] local;
 
+    //Constructor
     public Atlas(){
         local = new PLoc [181][361];
     }
 
+    //Coloca localidad segun el ploc
     boolean setLocalidad(PLoc p){
-        int lat=0;
-        int long=0;
+        //Guardianes
+        if(p==null || p.getLatitud()==null || p.getLongitud()==null)
+        	return false;
+        	
+        //Asignamos posicion
+        int x = (p.getLatitud().getPos() == 'N')  ? p.getLatitud().getGrados()+90   : -p.getLatitud().getGrados()+90;
+        int y = (p.getLongitud().getPos() == 'E') ? p.getLongitud().getGrados()+180 : -p.getLongitud().getGrados()+180;
 
-        if(p!=null){
-            if(p.getLatitud()!=null){
-                if(p.getLongitud()!=null){
-
-                    if(p.getLatitud().getPos() == 'N'){
-                        lat=p.getLatitud().getGrados()+90;
-                    }else{
-                        lat=90 - p.getLatitud().getGrados();
-                    }
-
-                    if(p.getLongitud().getPos() == 'E'){
-                        long = p.getLongitud().getGrados() + 180;
-                    }
-                    else{
-                        long = 180 - p.getLongitud().getGrados();
-                    }
-
-                    if(lat >= 0 && lat < local.length && long >= 0 && long < local[0].length){
-                        if(local[lat][long] == null){
-                            local[lat][long] = p;
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
+        //Guardianes de posicion: comprobamos q esta dentro de la matriz y que la posicion esta vacia
+        if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        	return false;
+        
+        if(local[x][y] != null)
+        	return false;
+        
+        //Asignacion
+        local[x][y] = p;
+        
+        return true;
     }
 
     public void leeAtlas(String f){
-        if(f != null){
-            FileReader fr=null;
-            BufferedReader br=null;
-            String linea=null;
-            String[] info;
-            PLoc nuevo;
-            String[] lat;
-            String[] long;
-            boolean cont=false;
-            Coordenada coord1;
-            Coordenada coord2;
+    	//Guardian principal, debe de haber documento que leer
+        if(f == null)
+        	return;
+        
+        //Variables iniciales
+        FileReader     file_reader     = null; //Lector de fichero
+        BufferedReader buffered_reader = null; //Memoria en buffer para leer linea por linea
+        String 		   line            = null; //Cada linea que se lee del fichero
+        
+        //IOException cazador
+        try{
+        	//Lee el fichero
+        	file_reader     = new FileReader(f);
+        	buffered_reader = new BufferedReader(file_reader);
+            
+        	//Leemos y comprobamos la primera linea y luego continuamos con do-while
+        	line = buffered_reader.readLine();
+        	if( line != null) {
+	            do{
+	            	//Dividimos la linea leida en funcion de sus #
+	                String[] datos = line.split("#");
+	                
+	                //Tiene que tener 5 datos
+	                if(datos.length !=5)
+	                	break;
+	                
+	                //?? Un dato vacio al leer el documento, es decir, un string "", se mete como null o como ""?
+	                //Saneamos los datos en variables manejables
+	                //Comprobamos datos vacios
+	                if(datos[0].equals(""))
+	                	datos[0] = null;
+	                
+	                if(datos[1].equals(""))
+	                	datos[1] = null;
+	                
+	                if(datos[2].equals(""))
+	                	datos[2] = null;
+	  
+	                //Tratamos las coordenadas
+                    String[] latitud=datos[3].split(" ");
+                    String[] longitud=datos[4].split(" ");
+                    
+	                Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
+                    try {
+                    	//Creamos el ploc a insertar
+                    	PLoc dentro = new PLoc(datos[0], datos[1], datos[2]);
+                    	
+                    	//y le pasamos las coordenadas
+                        dentro.setLatitud(latitud_coordenada);
+                        dentro.setLongitud(longitud_coordenada);
 
-            try{
-                fr=new FileReader(f);
-                br=new BufferedReader(fr);
-                linea=br.readLine();
+                        //metemos el ploc en la matriz
+                        this.setLocalidad(dentro);
 
-                while(linea!=null){
-                    info=linea.split("#");
-                    if(info.length==5) {
-                        if(info[0]!=null && !info[0].equals("")){
-                            cont=true;
-                        }else{
-                            info[0] = null;
-                        }
-                        if (info[1].equals("")) {
-                            info[1] = null;
-                        }
-                        if (info[2].equals("")) {
-                            info[2] = null;
-                        }
-
-                        nuevo = new PLoc(info[0], info[1], info[2]);
-
-                        if(cont) {
-                            nuevo.setContinente(info[0]);
-                        }
-
-                        lat=info[3].split(" ");
-                        long=info[4].split(" ");
-
-                        int latiGrados=Integer.parseInt(lat[0]);
-                        int latiMinutos=Integer.parseInt(lat[1]);
-                        int longiGrados=Integer.parseInt(long[0]);
-                        int longiMinutos=Integer.parseInt(long[1]);
-
-                        char letralati=lat[2].charAt(0);
-                        char letralongi=long[2].charAt(0);
-
-                        coord1 = new Coordenada(latiGrados,latiMinutos,letralati);
-                        coord2 = new Coordenada(longiGrados,longiMinutos,letralongi);
-
-                        try{
-                            //le paso las Coordenadas a mi PLOC
-                            nuevo.setLatitud(coord1);
-                            nuevo.setLongitud(coord2);
-
-                            //para meter el PLoc dentro de la matriz
-                            setLocalidad(nuevo);
-
-                        }catch(CoordenadaExcepcion error){
-                            //muestro el error
-                            System.out.println(error);
-                        }
+                        //Imprimir algun error por coordenada erronea
+                    }catch(CoordenadaExcepcion e){
+                        System.out.println(e);
                     }
-                    linea=br.readLine();
-                }
-            }catch(IOException o){
-                o.printStackTrace();
-            }
-            try{
-                if(fr != null){
-                    fr.close();
-
-                }
-                if(br != null){
-                    br.close();
-                }
-            }catch(IOException c){
-                c.printStackTrace();
-
-            }
+	                
+	                //Leemos la linea para continuar la lectura
+	                line=buffered_reader.readLine();
+	            }while(line != null);
+        	}
+            
+        }catch(IOException o){
+            o.printStackTrace();
         }
+        
+        //Despues de usarlos los cerramos
+        try{
+        	if(buffered_reader != null)
+        		buffered_reader.close();
+        	
+            if(file_reader != null)
+            	file_reader.close();
+                
+        }catch(IOException c){
+            c.printStackTrace();
+        }
+        
     }
 
     public String consultaAtlas(PLoc f){
+    	//Un ploc valido
+    	if(f == null)
+    		return null;
+    	
+    	//Con coordenadas
+    	if(f.getLongitud() == null || f.getLatitud() == null) 
+    		return null;
 
+        //Cogemos la posicion de la matriz
+        int x = (f.getLatitud().getPos() == 'N')  ? f.getLatitud().getGrados()+90   : -f.getLatitud().getGrados()+90;
+        int y = (f.getLongitud().getPos() == 'E') ? f.getLongitud().getGrados()+180 : -f.getLongitud().getGrados()+180;
+
+        //Guardianes de posicion: comprobamos q esta dentro de la matriz y que la posicion esta vacia
+        if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        	return null;
+        
+        //Si no hay nada, devuelve nulo
+        if(local[x][y] == null)
+        	return null;
+    	
+        return local[x][y].getCiudad();
     }
 
     public void muestraAtlasParcial(PLoc f, int n){
+    	//Un ploc valido con n positivo
+    	if(f == null || f.getLongitud() == null || f.getLatitud() == null || n < 0)
+    	{
+    		System.out.println("NO ES DE ESTE PLANETA");
+    		return;
+    	}
 
+    	//Cogemos la posicion de la matriz
+        int x = (f.getLatitud().getPos() == 'N')  ? f.getLatitud().getGrados()+90   : -f.getLatitud().getGrados()+90;
+        int y = (f.getLongitud().getPos() == 'E') ? f.getLongitud().getGrados()+180 : -f.getLongitud().getGrados()+180;
+
+        //Guardianes de posicion: comprobamos q esta dentro de la matriz y que la posicion esta vacia
+        if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        {
+        	System.out.println("NO ES DE ESTE PLANETA");
+    		return;
+        }
+        	
+        //Recorremos el subarea
+        for(int i = -(n)+x; i < n+1+x; i++)
+        {
+        	for(int j = -(n)+y; j < n+1+y; j++)
+        	{
+        		//Si esta fuera del area, solo se imprimen los puntos
+        		if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        		{
+        			System.out.print(".");
+        		}
+        		else 
+        		{
+        			//Si no hay PLoc, punto
+        			if(local[x][y]==null)
+        			{
+        				System.out.print(".");
+        			}
+        			else
+        			{
+        				//Si la ciudad es nulo o vacio, punto
+        				if(local[x][y].getCiudad() == null || local[x][y].getCiudad().equals(""))
+        				{
+        					System.out.print(".");
+        				}
+        				else
+        				{
+        					//Y finalmente el valor autentico
+        					System.out.print(local[x][y].getCiudad().charAt(0));
+        				}
+        			}
+        		}
+        	}
+        	
+        	//Retorno de carro
+        	System.out.println("");
+        }
     }
 }
