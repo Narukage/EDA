@@ -1,0 +1,9 @@
+Inicialmente el arbol esta vacio? -> true
+Despues de leer el arbol esta vacio? -> false
+Se han encontrado los paises:
+Brazil
+Italy
+Minnesota
+New Zealand
+Pakistan
+Uganda

@@ -1,0 +1,7 @@
+nodo 0: EU - Spain - Bilbao - 43.25 - -2.92
+nodo 1: EU - Spain - Pontevedra - 42.42 - -8.63
+nodo 2: EU - Spain - Madrid - 40.40 - -3.70
+nodo 3: EU - Spain - Altea - 38.58 - -0.05
+nodo 4: EU - Spain - Yecla - 38.60 - -1.10
+nodo 5: EU - Spain - Huelva - 37.25 - -6.95
+nodo 6: EU - Spain - Barcelona - 41.38 - 2.18

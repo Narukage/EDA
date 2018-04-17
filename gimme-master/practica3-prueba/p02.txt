@@ -1,0 +1,8 @@
+Inicialmente el arbol esta vacio? -> true
+Despues de leer el arbol esta vacio? -> false
+Bonnie Glen
+Roma
+Abacate
+Katerema
+Moshu Khan
+Wellington

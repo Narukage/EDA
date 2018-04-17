@@ -1,0 +1,8 @@
+Katerema esta en el arbol? -> true
+Bonnie Glen esta en el arbol? -> true
+Bolulla esta en el arbol? -> false
+Moshu Khan esta en el arbol? -> true
+Roma esta en el arbol? -> true
+Gympie esta en el arbol? -> false
+Abacate esta en el arbol? -> true
+Wellington esta en el arbol? -> true

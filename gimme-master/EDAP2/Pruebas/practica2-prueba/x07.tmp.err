@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.NullPointerException
+	at x07.main(x07.java:10)

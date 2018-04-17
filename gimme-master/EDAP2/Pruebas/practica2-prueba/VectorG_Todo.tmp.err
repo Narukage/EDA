@@ -1,0 +1,2 @@
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at VectorG_Todo.main(VectorG_Todo.java:43)

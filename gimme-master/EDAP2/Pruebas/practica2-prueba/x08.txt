@@ -1,0 +1,16 @@
+ordenando la lista -----------------
+nodo 0: AS - pais A - ciudad C - 12.20 - 12.20
+nodo 1: AS - pais A - ciudad B - 12.20 - 12.20
+nodo 2: AS - pais A - ciudad A - 12.20 - 12.20
+despues de ordenar la lista---------
+nodo 0: AS - pais A - ciudad A - 12.20 - 12.20
+nodo 1: AS - pais A - ciudad B - 12.20 - 12.20
+nodo 2: AS - pais A - ciudad C - 12.20 - 12.20
+ordenando la lista -----------------
+nodo 0: AS - pais A - ciudad A - 12.20 - 12.20
+nodo 1: AS - pais A - ciudad A - 12.20 - 11.32
+nodo 2: AS - pais A - ciudad A - 12.20 - 9.18
+despues de ordenar la lista---------
+nodo 0: AS - pais A - ciudad A - 12.20 - 9.18
+nodo 1: AS - pais A - ciudad A - 12.20 - 11.32
+nodo 2: AS - pais A - ciudad A - 12.20 - 12.20

@@ -1,0 +1,58 @@
++++++borrando pais null (dos al principio) => true
+nodo 0: AS - mi pais - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 3: AS - en medio country - ciudad 14 - 0.00 - 0.00
+nodo 4: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 5: AS - pais d - ciudad 16 - 0.00 - 0.00
+nodo 6: AS - otro pais - ciudad 17 - 0.00 - 0.00
+nodo 7: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais en medio country (uno en medio) => true
+nodo 0: AS - mi pais - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 3: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 4: AS - pais d - ciudad 16 - 0.00 - 0.00
+nodo 5: AS - otro pais - ciudad 17 - 0.00 - 0.00
+nodo 6: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais otro pais (dos al final) => true
+nodo 0: AS - mi pais - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 3: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 4: AS - pais d - ciudad 16 - 0.00 - 0.00
++++++borrando mi pais (dos al principio) => true
+nodo 0: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 1: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 2: AS - pais d - ciudad 16 - 0.00 - 0.00
++++++borrando pais d (dos al final) => true
+nodo 0: AS - pais b - ciudad 11 - 0.00 - 0.00
++++++borrando pais b (dos elementos lista queda vacia): true
++++++la lista queda vacia true
+CREANDO OTRA LISTA....
+nodo 0: AS - pais 1 - ciudad x - 0.00 - 0.00
+nodo 1: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais a - ciudad 13 - 0.00 - 0.00
+nodo 3: AS - pais a - ciudad 12 - 0.00 - 0.00
+nodo 4: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 5: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+nodo 6: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 7: AS - pais d - ciudad 16 - 0.00 - 0.00
+nodo 8: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+nodo 9: AS - pais 1 - ciudad 18 - 0.00 - 0.00
+borrando pais que no existe false
+borrando pais 1 => true
+nodo 0: AS - pais a - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - pais a - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 3: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 4: AS - pais d - ciudad 16 - 0.00 - 0.00
+borrando pais b => true
+nodo 0: AS - pais a - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - pais a - ciudad 12 - 0.00 - 0.00
+nodo 2: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 3: AS - pais d - ciudad 16 - 0.00 - 0.00
+borrando pais d => true
+nodo 0: AS - pais a - ciudad 13 - 0.00 - 0.00
+nodo 1: AS - pais a - ciudad 12 - 0.00 - 0.00
+borrando pais a => true

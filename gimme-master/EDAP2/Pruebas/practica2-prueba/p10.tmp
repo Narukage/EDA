@@ -1,0 +1,200 @@
+	Pares1
+
+EL VALOR DE LMAX ES INCORRECTO
+
+	Pares2
+
+EL VALOR DE LMAX ES INCORRECTO
+
+	Pares3
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+NO HAY FRONTERAS INTRACONTINENTALES
+
+	Pares4
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+CIUDADES FRONTERIZAS
+1Pego (Spain) - Lisboa (Portugal)
+APego (Spain) - Lisboa (Portugal)
+Pego (Spain) - Lisboa (Portugal)
+Pego (Spain) - Lisboa (Portugal)
+AParis (France) - ABrussels (Belgium)
+Paris (France) - ABrussels (Belgium)
+Paris (France) - ABrussels (Belgium)
+ABrussels (Belgium) - AParis (France)
+Brussels (Belgium) - AParis (France)
+Brussels (Belgium) - AParis (France)
+El Gollizo (Spain) - Lisboa (Portugal)
+Alcoi (Spain) - Lisboa (Portugal)
+Huerta de la Obispalia (Spain) - Lisboa (Portugal)
+Alcubillas (Spain) - Lisboa (Portugal)
+null (Spain) - Lisboa (Portugal)
+Agres (Spain) - Lisboa (Portugal)
+Agres (Spain) - Lisboa (Portugal)
+BAgres (Spain) - Lisboa (Portugal)
+Abanilla (Spain) - Lisboa (Portugal)
+Barcelona (Spain) - Nesmy (France)
+Capellania (Spain) - Lisboa (Portugal)
+Arroyo Cerezo (Spain) - Nesmy (France)
+1Abejuela (Spain) - Nesmy (France)
+Abejuela (Spain) - Nesmy (France)
+Abejuela (Spain) - Nesmy (France)
+BAbejuela (Spain) - Nesmy (France)
+Barranco de los Asensios (Spain) - Lisboa (Portugal)
+1El Rodriguillo (Spain) - Lisboa (Portugal)
+AEl Rodriguillo (Spain) - Lisboa (Portugal)
+El Rodriguillo (Spain) - Lisboa (Portugal)
+El Rodriguillo (Spain) - Lisboa (Portugal)
+Casamozza (France) - Barcelona (Spain)
+1Torrevieja (Spain) - Lisboa (Portugal)
+ATorrevieja (Spain) - Lisboa (Portugal)
+Torrevieja (Spain) - Lisboa (Portugal)
+Torrevieja (Spain) - Lisboa (Portugal)
+1Aars (Denmark) - ABrussels (Belgium)
+Aars (Denmark) - ABrussels (Belgium)
+Aars (Denmark) - ABrussels (Belgium)
+BAars (Denmark) - ABrussels (Belgium)
+1Sagra (Spain) - Nesmy (France)
+ASagra (Spain) - Nesmy (France)
+Sagra (Spain) - Nesmy (France)
+Sagra (Spain) - Nesmy (France)
+Ballinameen (Ireland) - Nesmy (France)
+Abrahamovce (Slovakia) - Casamozza (France)
+CIUDADES FRONTERIZAS MUTUAS
+1Pego (Spain) - Lisboa (Portugal)
+Barcelona (Spain) - Nesmy (France)
+
+	Pares5
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+CIUDADES FRONTERIZAS
+ABerlin (Germany) - Belov (Czech Republic)
+Berlin (Germany) - Belov (Czech Republic)
+Berlin (Germany) - Belov (Czech Republic)
+Belov (Czech Republic) - ABerlin (Germany)
+Alcantud (Spain) - Nantes (France)
+Fuenterrobles (Spain) - Nantes (France)
+Iguazuru (Bolivia) - La Pastora (Paraguay)
+Ngome (Zimbaue) - Pungula (Zambia)
+Roma (Italy) - Belov (Czech Republic)
+Agia Paraskevi (Greece) - Roma (Italy)
+CIUDADES FRONTERIZAS MUTUAS
+Alcantud (Spain) - Nantes (France)
+Iguazuru (Bolivia) - La Pastora (Paraguay)
+Ngome (Zimbaue) - Pungula (Zambia)
+
+	Rangos1
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+EL VALOR DEL RANGO ES INCORRECTO
+
+	Rangos2
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+EU - Spain - Sagra - 38.82 - -0.07
+
+	Rangos3
+
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+Sagra
+Sagra
+ASagra
+1Sagra
+Torrevieja
+Torrevieja
+ATorrevieja
+1Torrevieja
+BAbejuela
+Abejuela
+Abejuela
+1Abejuela
+El Rodriguillo
+El Rodriguillo
+AEl Rodriguillo
+1El Rodriguillo
+Abakouande
+Fuenterrobles
+Nesmy
+Arroyo Cerezo
+Nantes
+Barranco de los Asensios
+Losso Goungou
+Abanilla
+Capellania
+Barcelona
+Alcantud
+AParis
+Paris
+Paris
+Huerta de la Obispalia
+BAgres
+Agres
+Agres
+null
+Alcubillas
+Alcoi
+ABrussels
+Brussels
+Brussels
+El Gollizo
+Pego
+Pego
+APego
+1Pego
+Koimarama
+Lisboa
+Ballinameen
+Casamozza
+1Aars
+Aars
+Aars
+BAars
+Abang
+Kipele
+Roma
+ABerlin
+Berlin
+Berlin

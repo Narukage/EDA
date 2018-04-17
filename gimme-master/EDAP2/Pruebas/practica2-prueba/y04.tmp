@@ -1,0 +1,92 @@
++++++borrando pais null (dos al principio) => true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 2: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 4: AS - en medio country - ciudad 14 - 0.00 - 0.00
+posic 5: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 6: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 7: AS - otro pais - ciudad 17 - 0.00 - 0.00
+posic 8: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais en medio country (uno en medio) => true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 2: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 4: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 5: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 6: AS - otro pais - ciudad 17 - 0.00 - 0.00
+posic 7: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais otro pais (dos al final) => true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 2: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 4: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 5: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 6: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando mi pais (dos al principio) => true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 3: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 4: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 5: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais d (dos al final) => true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 2: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 3: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 4: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++borrando pais b (dos elementos lista queda vacia): true
+posic 0: AS - x - ciudad 12 - 0.00 - 0.00
+posic 1: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 2: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 3: AS - otro pais - ciudad 18 - 0.00 - 0.00
++++++la lista queda vacia false
+CREANDO OTRA LISTA....
+posic 0: AS - pais 1 - ciudad x - 0.00 - 0.00
+posic 1: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+posic 2: AS - pais a - ciudad 13 - 0.00 - 0.00
+posic 3: AS - pais a - ciudad 12 - 0.00 - 0.00
+posic 4: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 5: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+posic 6: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 7: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 8: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+posic 9: AS - pais 1 - ciudad 18 - 0.00 - 0.00
+borrando pais que no existe false
+borrando pais 1 => true
+posic 0: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+posic 1: AS - pais a - ciudad 13 - 0.00 - 0.00
+posic 2: AS - pais a - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 4: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+posic 5: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 6: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 7: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+posic 8: AS - pais 1 - ciudad 18 - 0.00 - 0.00
+borrando pais b => true
+posic 0: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+posic 1: AS - pais a - ciudad 13 - 0.00 - 0.00
+posic 2: AS - pais a - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+posic 4: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 5: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 6: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+posic 7: AS - pais 1 - ciudad 18 - 0.00 - 0.00
+borrando pais d => true
+posic 0: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+posic 1: AS - pais a - ciudad 13 - 0.00 - 0.00
+posic 2: AS - pais a - ciudad 12 - 0.00 - 0.00
+posic 3: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+posic 4: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 5: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+posic 6: AS - pais 1 - ciudad 18 - 0.00 - 0.00
+borrando pais a => true
+posic 0: AS - pais 1 - ciudad 12 - 0.00 - 0.00
+posic 1: AS - pais a - ciudad 12 - 0.00 - 0.00
+posic 2: AS - pais 1 - ciudad 14 - 0.00 - 0.00
+posic 3: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 4: AS - pais 1 - ciudad 17 - 0.00 - 0.00
+posic 5: AS - pais 1 - ciudad 18 - 0.00 - 0.00

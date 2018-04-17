@@ -1,0 +1,19 @@
+false
+false
+borrando tokio => true
+nodo 0: AS - tailandia - bangladesh - 0.00 - 0.00
+nodo 1: AS - china - pekin - 0.00 - 0.00
+nodo 2: AS - china - shangai - 0.00 - 0.00
+borrando tokio => false
+nodo 0: AS - tailandia - bangladesh - 0.00 - 0.00
+nodo 1: AS - china - pekin - 0.00 - 0.00
+nodo 2: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+nodo 0: AS - china - pekin - 0.00 - 0.00
+nodo 1: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+nodo 0: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+borrando de lista que quedo vacia false
+nodo 0: AS - mauritius - x - 0.00 - 0.00
+boorrando null true

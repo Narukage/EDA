@@ -1,0 +1,33 @@
+insertando AS-tailandia-bangladesh 
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+------------
+insertnado AS-china-pekin
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+-------------
+insertando AS-china-shangai
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+posic 2: AS - china - shangai - 0.00 - 0.00
+-------------
+inserntando AS-japon-tokio
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+posic 2: AS - china - shangai - 0.00 - 0.00
+posic 3: AS - japon - tokio - 0.00 - 0.00
+-------------
+borrando cola..
+true
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+posic 2: AS - china - shangai - 0.00 - 0.00
+borrando cola..
+true
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+borrando cola..
+true
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+borrando cola..
+true
+borrando cola de vacio..false

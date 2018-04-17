@@ -1,0 +1,129 @@
+		-->PRUEBAS ArbolG<--
+
+-->Arbol Vacio?
+true
+
+-->Moscow en arbol?
+false
+-->Hammerfest en arbol?
+false
+-->Juju en arbol?
+false
+
+-->Insertamos Georgetown?
+true
+
+-->Leemos el arbol
+
+-->Arbol Vacio?
+false
+
+-->Recorrido en Inorden:
+Santiago
+Cordoba
+Buenos Aires
+Georgetown
+Dakar
+Bordeaux
+Tripoli
+Hammerfest
+Moscow
+Teheran
+
+-->Recorrido por niveles
+Georgetown
+Cordoba
+Hammerfest
+Santiago
+Buenos Aires
+Bordeaux
+Teheran
+Dakar
+Tripoli
+Moscow
+
+-->Moscow en arbol?
+true
+-->Hammerfest en arbol?
+true
+-->Juju en arbol?
+false
+
+-->getCiudades Pais: Argentina
+Buenos Aires
+Cordoba
+-->busquedaLejana no:
+Georgetown
+-->busquedaLejana so:
+Santiago
+-->busquedaLejana ne:
+Teheran
+-->busquedaLejana se:
+Teheran
+
+		-->PRUEBAS ArbolS<--
+
+-->Arbol Vacio?
+true
+
+-->Moscow en arbol?
+false
+-->Hammerfest en arbol?
+false
+-->Juju en arbol?
+false
+
+-->Insertamos Georgetown?
+true
+
+-->Leemos el arbol
+
+-->Arbol Vacio?
+false
+
+-->Recorrido por paises:
+Argentina (2): Buenos Aires -  Cordoba
+Chile (1): Santiago
+France (1): Bordeaux
+Guyana (1): Georgetown
+Iran (1): Teheran
+Libya (1): Tripoli
+Norway (1): Hammerfest
+Russia (1): Moscow
+Senegal (1): Dakar
+
+-->Borramos pais France?
+true
+
+-->Recorrido por paises:
+Argentina (2): Buenos Aires -  Cordoba
+Chile (1): Santiago
+Guyana (1): Georgetown
+Iran (1): Teheran
+Libya (1): Tripoli
+Norway (1): Hammerfest
+Russia (1): Moscow
+Senegal (1): Dakar
+
+-->Borramos pais France?
+false
+
+-->Moscow en arbol?
+true
+-->Hammerfest en arbol?
+true
+-->Juju en arbol?
+false
+
+-->getCiudades Pais: Argentina
+Buenos Aires
+Cordoba
+-->busquedaLejana no:
+Georgetown
+-->busquedaLejana so:
+Santiago
+-->busquedaLejana ne:
+Teheran
+-->busquedaLejana se:
+Teheran
+

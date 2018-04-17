@@ -1,0 +1,16 @@
+getCiudades() --> devuelve el pais 
+
+Arbol a implementar --> NodoAG
+PLOC y 4 hijos (NO,SO,NE,SE)
+
+ARBOLG
+
+por la raiz se hace TODO.
+inserta() --> Si es nulo --> creo un nuevo PLOC con 4 hijos (TODOS TIENEN 4 HIJOS)
+Las hijas tienen sus hijos nulos
+
+Recorrido por NIVELES --> cola para encolar y desencolar
+
+22:10 --> Segundo Árbol
+
+clave es un String y el valor es un arbol de PLOCS

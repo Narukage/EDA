@@ -1,0 +1,8 @@
+java.io.FileNotFoundException: a01.dat (No existe el fichero o el directorio)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at java.io.FileReader.<init>(FileReader.java:58)
+	at ListaG.leeLista(ListaG.java:106)
+	at x09.main(x09.java:6)

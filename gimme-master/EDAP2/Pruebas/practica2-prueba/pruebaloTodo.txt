@@ -1,0 +1,891 @@
+		PRUEBAS DE ListaG
+
+
+	-> Seguimiento: Operaciones en lista vacia <-
+false
+false
+false
+false
+CiudadNoEncontradaExcepcion: Ciudad cualquiera
+java.lang.IndexOutOfBoundsException: 0
+null
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones con nulls <-
+CiudadNoEncontradaExcepcion
+false
+false
+null
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones de insercion <-
+-> Lista:
+nodo 0: Continente - Pais - Ciudad4 - -8.33 - 8.27
+-> Lista:
+nodo 0: Continente - Pais - Ciudad10 - -20.83 - 20.67
+-> Lista:
+nodo 0: Continente - Pais - Ciudad0 - x - x
+nodo 1: Continente - Pais - Ciudad1 - -2.08 - -9.13
+nodo 2: Continente - Pais - Ciudad2 - -4.17 - -18.27
+nodo 3: Continente - Pais - Ciudad3 - -6.25 - -27.40
+nodo 4: Continente - Pais - Ciudad4 - -8.33 - 8.27
+nodo 5: Continente - Pais - Ciudad5 - -10.42 - 10.33
+nodo 6: Continente - Pais - Ciudad6 - 18.70 - -54.80
+nodo 7: Continente - Pais - Ciudad7 - -14.58 - -63.93
+nodo 8: Continente - Pais - Ciudad8 - x - 16.53
+nodo 9: Continente - Pais - Ciudad9 - -18.75 - x
+nodo 10: Continente - Pais - Ciudad10 - -20.83 - 20.67
+nodo 11: Continente - Pais - Ciudad11 - -22.92 - -9.48
+nodo 12: Continente - Pais - Ciudad12 - 36.42 - 24.80
+nodo 13: Continente - Pais - Ciudad13 - -26.10 - -27.75
+nodo 14: Continente - Pais - Ciudad14 - -28.18 - -36.88
+-> Lista:
+nodo 0: Continente - Pais - Ciudad4 - -8.33 - 8.27
+nodo 1: Continente - Pais - Ciudad0 - x - x
+nodo 2: Continente - Pais - Ciudad1 - -2.08 - -9.13
+nodo 3: Continente - Pais - Ciudad2 - -4.17 - -18.27
+nodo 4: Continente - Pais - Ciudad3 - -6.25 - -27.40
+nodo 5: Continente - Pais - Ciudad4 - -8.33 - 8.27
+nodo 6: Continente - Pais - Ciudad5 - -10.42 - 10.33
+nodo 7: Continente - Pais - Ciudad6 - 18.70 - -54.80
+nodo 8: Continente - Pais - Ciudad7 - -14.58 - -63.93
+nodo 9: Continente - Pais - Ciudad8 - x - 16.53
+nodo 10: Continente - Pais - Ciudad9 - -18.75 - x
+nodo 11: Continente - Pais - Ciudad10 - -20.83 - 20.67
+nodo 12: Continente - Pais - Ciudad11 - -22.92 - -9.48
+nodo 13: Continente - Pais - Ciudad12 - 36.42 - 24.80
+nodo 14: Continente - Pais - Ciudad13 - -26.10 - -27.75
+nodo 15: Continente - Pais - Ciudad14 - -28.18 - -36.88
+nodo 16: Continente - Pais - Ciudad0 - x - x
+nodo 17: Continente - Pais - Ciudad1 - -2.08 - -9.13
+nodo 18: Continente - Pais - Ciudad2 - -4.17 - -18.27
+nodo 19: Continente - Pais - Ciudad10 - -20.83 - 20.67
+
+	-> Seguimiento: Operaciones de consulta validas <-
+6
+Continente - Pais - Ciudad6 - 18 42 N - 54 48 O
+java.lang.IndexOutOfBoundsException: 100
+java.lang.IndexOutOfBoundsException: -1
+Continente - Pais - Ciudad4 - 8 20 S - 8 16 E
+Continente - Pais - Ciudad0 - x - x
+Continente - Pais - Ciudad1 - 2 5 S - 9 8 O
+Continente - Pais - Ciudad2 - 4 10 S - 18 16 O
+Continente - Pais - Ciudad3 - 6 15 S - 27 24 O
+Continente - Pais - Ciudad4 - 8 20 S - 8 16 E
+Continente - Pais - Ciudad5 - 10 25 S - 10 20 E
+Continente - Pais - Ciudad6 - 18 42 N - 54 48 O
+Continente - Pais - Ciudad7 - 14 35 S - 63 56 O
+Continente - Pais - Ciudad8 - x - 16 32 E
+Continente - Pais - Ciudad9 - 18 45 S - x
+Continente - Pais - Ciudad10 - 20 50 S - 20 40 E
+Continente - Pais - Ciudad11 - 22 55 S - 9 29 O
+Continente - Pais - Ciudad12 - 36 25 N - 24 48 E
+Continente - Pais - Ciudad13 - 26 6 S - 27 45 O
+Continente - Pais - Ciudad14 - 28 11 S - 36 53 O
+Continente - Pais - Ciudad0 - x - x
+Continente - Pais - Ciudad1 - 2 5 S - 9 8 O
+Continente - Pais - Ciudad2 - 4 10 S - 18 16 O
+Continente - Pais - Ciudad10 - 20 50 S - 20 40 E
+
+	-> Seguimiento: Operaciones de borrado <-
+true
+true
+true
+-> Lista:
+nodo 0: Continente - Pais - Ciudad1 - -2.08 - -9.13
+nodo 1: Continente - Pais - Ciudad2 - -4.17 - -18.27
+nodo 2: Continente - Pais - Ciudad3 - -6.25 - -27.40
+nodo 3: Continente - Pais - Ciudad4 - -8.33 - 8.27
+nodo 4: Continente - Pais - Ciudad5 - -10.42 - 10.33
+nodo 5: Continente - Pais - Ciudad6 - 18.70 - -54.80
+nodo 6: Continente - Pais - Ciudad7 - -14.58 - -63.93
+nodo 7: Continente - Pais - Ciudad8 - x - 16.53
+nodo 8: Continente - Pais - Ciudad9 - -18.75 - x
+nodo 9: Continente - Pais - Ciudad10 - -20.83 - 20.67
+nodo 10: Continente - Pais - Ciudad11 - -22.92 - -9.48
+nodo 11: Continente - Pais - Ciudad12 - 36.42 - 24.80
+nodo 12: Continente - Pais - Ciudad13 - -26.10 - -27.75
+nodo 13: Continente - Pais - Ciudad14 - -28.18 - -36.88
+nodo 14: Continente - Pais - Ciudad0 - x - x
+nodo 15: Continente - Pais - Ciudad1 - -2.08 - -9.13
+nodo 16: Continente - Pais - Ciudad2 - -4.17 - -18.27
+false
+true
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones de consultas no validas <-
+CiudadNoEncontradaExcepcion: Ciudad5
+java.lang.IndexOutOfBoundsException: 7
+java.lang.IndexOutOfBoundsException: 0
+java.lang.IndexOutOfBoundsException: -1
+array nulo
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Consultas a datos con null <-
+0
+true
+Continente - x - x - x - x
+Continente - x - x - x - x
+true
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Leyendo lista facil <-
+-> Lista:
+nodo 0: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+nodo 1: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 2: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 3: NA - EEUU - Akulurak - 62.55 - -164.55
+nodo 4: OC - Samoa - Alao - -14.27 - -170.55
+nodo 5: EU - Spain - Sagra - 38.82 - -0.07
+
+	-> Seguimiento: Ordenacion de lista facil <-
+-> Lista:
+nodo 0: OC - Samoa - Alao - -14.27 - -170.55
+nodo 1: NA - EEUU - Akulurak - 62.55 - -164.55
+nodo 2: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 3: EU - Spain - Sagra - 38.82 - -0.07
+nodo 4: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 5: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+
+	-> Seguimiento: Leyendo lista jodida <-
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+-> Lista:
+nodo 0: EU - Spain - null - 38.78 - -2.52
+nodo 1: EU - Spain - 1Abejuela - 39.90 - -0.88
+nodo 2: EU - Spain - 1Pego - 38.85 - -7.13
+nodo 3: EU - Spain - 1El Rodriguillo - 38.37 - -1.05
+nodo 4: EU - Spain - 1Torrevieja - 37.98 - -0.68
+nodo 5: EU - Spain - 1Sagra - 38.82 - -0.07
+nodo 6: EU - Denmark - 1Aars - 56.80 - 9.50
+nodo 7: EU - Spain - BAgres - 38.78 - -2.52
+nodo 8: EU - Spain - BAbejuela - 39.90 - -0.88
+nodo 9: EU - Spain - APego - 38.85 - -7.13
+nodo 10: EU - Spain - AEl Rodriguillo - 38.37 - -1.05
+nodo 11: EU - Spain - ATorrevieja - 37.98 - -0.68
+nodo 12: EU - Spain - ASagra - 38.82 - -0.07
+nodo 13: EU - Denmark - BAars - 56.80 - 9.50
+nodo 14: x - Germany - ABerlin - 52.52 - 13.40
+nodo 15: EU - Belgium - ABrussels - 50.85 - 4.33
+nodo 16: EU - France - AParis - 48.85 - 2.33
+nodo 17: OC - Australia - APerth - -41.57 - 147.17
+nodo 18: x - Australia - ADarwin - -12.45 - 130.83
+nodo 19: OC - Australia - BAdelaide - -34.93 - 138.60
+nodo 20: OC - Tonga - AFonginonga - -19.75 - -174.33
+nodo 21: OC - Samoa - APatamea - -13.52 - -172.30
+nodo 22: OC - Papua Nueva Guinea - AIbaradoku - -9.50 - 147.90
+nodo 23: OC - Australia - AMelbourne - -37.80 - 144.95
+nodo 24: x - Australia - ACanberra - -35.28 - 149.12
+nodo 25: OC - Australia - BAlbion - -27.42 - 153.03
+nodo 26: x - Vanuatu - AKoimarama - -13.90 - 167.47
+nodo 27: SA - Falkland Islands - Pebble Island Settlement - -51.32 - -59.60
+nodo 28: SA - Uruguay - Abrojal - -31.75 - -55.02
+nodo 29: SA - Argentina - Buenos Aires - -34.60 - -58.37
+nodo 30: SA - Argentina - Cordoba - -31.40 - -64.18
+nodo 31: SA - Brazil - Agostinho - -21.40 - -47.55
+nodo 32: x - Bolivia - Iguazuru - -21.07 - -63.10
+nodo 33: x - Paraguay - La Pastora - -25.23 - -56.53
+nodo 34: AF - Congo - Abiana - -0.07 - 27.83
+nodo 35: x - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 36: SA - Falkland Islands - Roy Cove Settlement - -51.53 - -60.38
+nodo 37: SA - Falkland Islands - Mare Harbour Rancho - -51.90 - -58.40
+nodo 38: NA - EEUU - Anchor Point - 59.77 - -151.82
+nodo 39: x - EEUU - Aklut - 60.20 - -162.25
+nodo 40: x - Greece - Agia Paraskevi - 39.00 - 21.78
+nodo 41: EU - France - Nesmy - 46.58 - -1.40
+nodo 42: x - France - Nantes - 47.22 - -1.55
+nodo 43: EU - France - Casamozza - 42.52 - 9.43
+nodo 44: EU - Russia - Annelovo - 60.30 - 30.50
+nodo 45: SA - Brazil - Abacate - -1.12 - -49.65
+nodo 46: x - Peru - Cuzco - -6.98 - -76.47
+nodo 47: NA - Oklahoma - Dover - 35.97 - -97.90
+nodo 48: NA - Arizona - Dobson - 32.47 - -111.28
+nodo 49: NA - Idaho - Rebecca - 44.23 - -116.85
+nodo 50: x - Nevada - Darroughs Hot Springs - 38.82 - -117.17
+nodo 51: NA - Texas - Elmendorf - 29.25 - -98.32
+nodo 52: NA - Montana - Buffalo - 46.82 - -109.82
+nodo 53: NA - Minnesota - Bonnie Glen - 45.35 - -92.90
+nodo 54: NA - Alabama - Abbeville - 31.57 - -85.25
+nodo 55: x - Kansas - Abbyville - 37.97 - -98.20
+nodo 56: x - Czech Republic - Belov - 49.20 - 17.48
+nodo 57: EU - Slovakia - Abrahamovce - 49.03 - 20.43
+nodo 58: EU - Ireland - Ballinameen - 53.90 - -8.30
+nodo 59: EU - Portugal - Lisboa - 40.50 - -7.93
+nodo 60: x - Italy - Roma - 41.88 - 12.48
+nodo 61: EU - Spain - Abanilla - 39.20 - -2.05
+nodo 62: EU - Spain - Alcubillas - 37.75 - -3.13
+nodo 63: EU - Spain - Capellania - 37.92 - -2.12
+nodo 64: EU - Spain - Barranco de los Asensios - 37.48 - -1.65
+nodo 65: EU - Spain - El Gollizo - 38.52 - -4.42
+nodo 66: EU - Spain - Alcoi - 38.70 - -3.47
+nodo 67: EU - Spain - Huerta de la Obispalia - 39.98 - -2.48
+nodo 68: x - Spain - Alcantud - 40.55 - -2.33
+nodo 69: EU - Spain - Arroyo Cerezo - 40.12 - -1.42
+nodo 70: x - Spain - Fuenterrobles - 39.58 - -1.35
+nodo 71: EU - Spain - Agres - 38.78 - -2.52
+nodo 72: EU - Spain - Abejuela - 39.90 - -0.88
+nodo 73: EU - Spain - Pego - 38.85 - -7.13
+nodo 74: EU - Spain - El Rodriguillo - 38.37 - -1.05
+nodo 75: EU - Spain - Torrevieja - 37.98 - -0.68
+nodo 76: EU - Spain - Sagra - 38.82 - -0.07
+nodo 77: EU - Denmark - Aars - 56.80 - 9.50
+nodo 78: x - Germany - Berlin - 52.52 - 13.40
+nodo 79: EU - Belgium - Brussels - 50.85 - 4.33
+nodo 80: EU - France - Paris - 48.85 - 2.33
+nodo 81: OC - Australia - Perth - -41.57 - 147.17
+nodo 82: x - Australia - Darwin - -12.45 - 130.83
+nodo 83: OC - Australia - Adelaide - -34.93 - 138.60
+nodo 84: OC - Tonga - Fonginonga - -19.75 - -174.33
+nodo 85: OC - Samoa - Patamea - -13.52 - -172.30
+nodo 86: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+nodo 87: OC - Australia - Melbourne - -37.80 - 144.95
+nodo 88: x - Australia - Canberra - -35.28 - 149.12
+nodo 89: x - Vanuatu - Koimarama - -13.90 - 167.47
+nodo 90: EU - Spain - Agres - 38.78 - -2.52
+nodo 91: EU - Spain - Abejuela - 39.90 - -0.88
+nodo 92: EU - Spain - Pego - 38.85 - -7.13
+nodo 93: EU - Spain - El Rodriguillo - 38.37 - -1.05
+nodo 94: EU - Spain - Torrevieja - 37.98 - -0.68
+nodo 95: EU - Spain - Sagra - 38.82 - -0.07
+nodo 96: EU - Denmark - Aars - 56.80 - 9.50
+nodo 97: x - Germany - Berlin - 52.52 - 13.40
+nodo 98: EU - Belgium - Brussels - 50.85 - 4.33
+nodo 99: EU - France - Paris - 48.85 - 2.33
+nodo 100: OC - Australia - Perth - -41.57 - 147.17
+nodo 101: AF - Vanuatu - x - -13.90 - 30.83
+nodo 102: x - Australia - Darwin - -12.45 - 130.83
+nodo 103: OC - Australia - Adelaide - -34.93 - 138.60
+nodo 104: OC - Tonga - Fonginonga - -19.75 - -174.33
+nodo 105: OC - Samoa - Patamea - -13.52 - -172.30
+nodo 106: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+nodo 107: OC - Australia - Melbourne - -37.80 - 144.95
+nodo 108: x - Australia - Canberra - -35.28 - 149.12
+nodo 109: OC - Australia - Albion - -27.42 - 153.03
+nodo 110: x - Vanuatu - Koimarama - -13.90 - 7.45
+nodo 111: x - Zambia - Pungula - -13.18 - 27.45
+nodo 112: AF - Botsuana - Telekele - -24.02 - 25.82
+nodo 113: x - Zimbaue - Ngome - -19.70 - 31.82
+nodo 114: AF - Tanzania - Mkutano - -7.32 - 31.70
+nodo 115: AF - Uganda - Katerema - 0.63 - 34.08
+nodo 116: AF - Congo - Kipele - -3.77 - 12.47
+nodo 117: AF - Sudan - Saqadi - 17.10 - 33.65
+nodo 118: AF - Niger - Losso Goungou - 13.52 - 2.03
+nodo 119: AF - Camerun - Abang - 3.80 - 11.30
+nodo 120: x - Chad - Adil - 9.90 - 16.05
+nodo 121: AS - China - Changxin - 26.07 - 99.40
+nodo 122: AS - Philippines - Manila - 14.60 - 120.97
+nodo 123: AS - Laos - Ban Ban - 19.63 - 103.55
+nodo 124: x - Bangladesh - Betmanda - 90.07 - 89.97
+nodo 125: AS - Pakistan - x - 33.60 - 73.27
+nodo 126: x - x - Gazeh - 36.67 - 55.87
+nodo 127: x - Nepal - Dhundras - 28.93 - 81.08
+nodo 128: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+nodo 129: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 130: SA - Ecuador - Quiroz - -0.27 - -77.17
+nodo 131: NA - Nebraska - Cotesfield - 41.35 - -98.62
+nodo 132: EU - Spain - Barcelona - 41.38 - 2.15
+nodo 133: OC - Samoa - Alao - -14.27 - -170.55
+nodo 134: NA - EEUU - Akulurak - 62.55 - -164.55
+nodo 135: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 136: EU - Spain - Sagra - 38.82 - -0.07
+nodo 137: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 138: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+
+	-> Seguimiento: Ordenacion de lista jodida <-
+-> Lista:
+nodo 0: OC - Tonga - AFonginonga - -19.75 - -174.33
+nodo 1: OC - Tonga - Fonginonga - -19.75 - -174.33
+nodo 2: OC - Tonga - Fonginonga - -19.75 - -174.33
+nodo 3: OC - Samoa - APatamea - -13.52 - -172.30
+nodo 4: OC - Samoa - Patamea - -13.52 - -172.30
+nodo 5: OC - Samoa - Patamea - -13.52 - -172.30
+nodo 6: OC - Samoa - Alao - -14.27 - -170.55
+nodo 7: NA - EEUU - Akulurak - 62.55 - -164.55
+nodo 8: x - EEUU - Aklut - 60.20 - -162.25
+nodo 9: NA - EEUU - Anchor Point - 59.77 - -151.82
+nodo 10: x - Nevada - Darroughs Hot Springs - 38.82 - -117.17
+nodo 11: NA - Idaho - Rebecca - 44.23 - -116.85
+nodo 12: NA - Arizona - Dobson - 32.47 - -111.28
+nodo 13: NA - Montana - Buffalo - 46.82 - -109.82
+nodo 14: NA - Nebraska - Cotesfield - 41.35 - -98.62
+nodo 15: NA - Texas - Elmendorf - 29.25 - -98.32
+nodo 16: x - Kansas - Abbyville - 37.97 - -98.20
+nodo 17: NA - Oklahoma - Dover - 35.97 - -97.90
+nodo 18: NA - Minnesota - Bonnie Glen - 45.35 - -92.90
+nodo 19: NA - Alabama - Abbeville - 31.57 - -85.25
+nodo 20: SA - Ecuador - Quiroz - -0.27 - -77.17
+nodo 21: x - Peru - Cuzco - -6.98 - -76.47
+nodo 22: SA - Argentina - Cordoba - -31.40 - -64.18
+nodo 23: x - Bolivia - Iguazuru - -21.07 - -63.10
+nodo 24: SA - Falkland Islands - Roy Cove Settlement - -51.53 - -60.38
+nodo 25: x - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 26: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+nodo 27: SA - Falkland Islands - Pebble Island Settlement - -51.32 - -59.60
+nodo 28: SA - Falkland Islands - Mare Harbour Rancho - -51.90 - -58.40
+nodo 29: SA - Argentina - Buenos Aires - -34.60 - -58.37
+nodo 30: x - Paraguay - La Pastora - -25.23 - -56.53
+nodo 31: SA - Uruguay - Abrojal - -31.75 - -55.02
+nodo 32: SA - Brazil - Abacate - -1.12 - -49.65
+nodo 33: SA - Brazil - Agostinho - -21.40 - -47.55
+nodo 34: EU - Ireland - Ballinameen - 53.90 - -8.30
+nodo 35: EU - Portugal - Lisboa - 40.50 - -7.93
+nodo 36: EU - Spain - 1Pego - 38.85 - -7.13
+nodo 37: EU - Spain - APego - 38.85 - -7.13
+nodo 38: EU - Spain - Pego - 38.85 - -7.13
+nodo 39: EU - Spain - Pego - 38.85 - -7.13
+nodo 40: EU - Spain - El Gollizo - 38.52 - -4.42
+nodo 41: EU - Spain - Alcoi - 38.70 - -3.47
+nodo 42: EU - Spain - Alcubillas - 37.75 - -3.13
+nodo 43: EU - Spain - Agres - 38.78 - -2.52
+nodo 44: EU - Spain - Agres - 38.78 - -2.52
+nodo 45: EU - Spain - BAgres - 38.78 - -2.52
+nodo 46: EU - Spain - null - 38.78 - -2.52
+nodo 47: EU - Spain - Huerta de la Obispalia - 39.98 - -2.48
+nodo 48: x - Spain - Alcantud - 40.55 - -2.33
+nodo 49: EU - Spain - Capellania - 37.92 - -2.12
+nodo 50: EU - Spain - Abanilla - 39.20 - -2.05
+nodo 51: EU - Spain - Barranco de los Asensios - 37.48 - -1.65
+nodo 52: x - France - Nantes - 47.22 - -1.55
+nodo 53: EU - Spain - Arroyo Cerezo - 40.12 - -1.42
+nodo 54: EU - France - Nesmy - 46.58 - -1.40
+nodo 55: x - Spain - Fuenterrobles - 39.58 - -1.35
+nodo 56: EU - Spain - 1El Rodriguillo - 38.37 - -1.05
+nodo 57: EU - Spain - AEl Rodriguillo - 38.37 - -1.05
+nodo 58: EU - Spain - El Rodriguillo - 38.37 - -1.05
+nodo 59: EU - Spain - El Rodriguillo - 38.37 - -1.05
+nodo 60: EU - Spain - 1Abejuela - 39.90 - -0.88
+nodo 61: EU - Spain - Abejuela - 39.90 - -0.88
+nodo 62: EU - Spain - Abejuela - 39.90 - -0.88
+nodo 63: EU - Spain - BAbejuela - 39.90 - -0.88
+nodo 64: EU - Spain - 1Torrevieja - 37.98 - -0.68
+nodo 65: EU - Spain - ATorrevieja - 37.98 - -0.68
+nodo 66: EU - Spain - Torrevieja - 37.98 - -0.68
+nodo 67: EU - Spain - Torrevieja - 37.98 - -0.68
+nodo 68: EU - Spain - 1Sagra - 38.82 - -0.07
+nodo 69: EU - Spain - ASagra - 38.82 - -0.07
+nodo 70: EU - Spain - Sagra - 38.82 - -0.07
+nodo 71: EU - Spain - Sagra - 38.82 - -0.07
+nodo 72: EU - Spain - Sagra - 38.82 - -0.07
+nodo 73: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 74: AF - Togo - Abakouande - 9.40 - 1.25
+nodo 75: AF - Niger - Losso Goungou - 13.52 - 2.03
+nodo 76: EU - Spain - Barcelona - 41.38 - 2.15
+nodo 77: EU - France - AParis - 48.85 - 2.33
+nodo 78: EU - France - Paris - 48.85 - 2.33
+nodo 79: EU - France - Paris - 48.85 - 2.33
+nodo 80: EU - Belgium - ABrussels - 50.85 - 4.33
+nodo 81: EU - Belgium - Brussels - 50.85 - 4.33
+nodo 82: EU - Belgium - Brussels - 50.85 - 4.33
+nodo 83: x - Vanuatu - Koimarama - -13.90 - 7.45
+nodo 84: EU - France - Casamozza - 42.52 - 9.43
+nodo 85: EU - Denmark - 1Aars - 56.80 - 9.50
+nodo 86: EU - Denmark - Aars - 56.80 - 9.50
+nodo 87: EU - Denmark - Aars - 56.80 - 9.50
+nodo 88: EU - Denmark - BAars - 56.80 - 9.50
+nodo 89: AF - Camerun - Abang - 3.80 - 11.30
+nodo 90: AF - Congo - Kipele - -3.77 - 12.47
+nodo 91: x - Italy - Roma - 41.88 - 12.48
+nodo 92: x - Germany - ABerlin - 52.52 - 13.40
+nodo 93: x - Germany - Berlin - 52.52 - 13.40
+nodo 94: x - Germany - Berlin - 52.52 - 13.40
+nodo 95: x - Chad - Adil - 9.90 - 16.05
+nodo 96: x - Czech Republic - Belov - 49.20 - 17.48
+nodo 97: EU - Slovakia - Abrahamovce - 49.03 - 20.43
+nodo 98: x - Greece - Agia Paraskevi - 39.00 - 21.78
+nodo 99: AF - Botsuana - Telekele - -24.02 - 25.82
+nodo 100: x - Zambia - Pungula - -13.18 - 27.45
+nodo 101: AF - Congo - Abiana - -0.07 - 27.83
+nodo 102: EU - Russia - Annelovo - 60.30 - 30.50
+nodo 103: AF - Vanuatu - x - -13.90 - 30.83
+nodo 104: AF - Tanzania - Mkutano - -7.32 - 31.70
+nodo 105: x - Zimbaue - Ngome - -19.70 - 31.82
+nodo 106: AF - Sudan - Saqadi - 17.10 - 33.65
+nodo 107: AF - Uganda - Katerema - 0.63 - 34.08
+nodo 108: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+nodo 109: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+nodo 110: x - x - Gazeh - 36.67 - 55.87
+nodo 111: AS - Pakistan - x - 33.60 - 73.27
+nodo 112: x - Nepal - Dhundras - 28.93 - 81.08
+nodo 113: x - Bangladesh - Betmanda - 90.07 - 89.97
+nodo 114: AS - China - Changxin - 26.07 - 99.40
+nodo 115: AS - Laos - Ban Ban - 19.63 - 103.55
+nodo 116: AS - Philippines - Manila - 14.60 - 120.97
+nodo 117: x - Australia - ADarwin - -12.45 - 130.83
+nodo 118: x - Australia - Darwin - -12.45 - 130.83
+nodo 119: x - Australia - Darwin - -12.45 - 130.83
+nodo 120: OC - Australia - Adelaide - -34.93 - 138.60
+nodo 121: OC - Australia - Adelaide - -34.93 - 138.60
+nodo 122: OC - Australia - BAdelaide - -34.93 - 138.60
+nodo 123: OC - Australia - AMelbourne - -37.80 - 144.95
+nodo 124: OC - Australia - Melbourne - -37.80 - 144.95
+nodo 125: OC - Australia - Melbourne - -37.80 - 144.95
+nodo 126: OC - Australia - APerth - -41.57 - 147.17
+nodo 127: OC - Australia - Perth - -41.57 - 147.17
+nodo 128: OC - Australia - Perth - -41.57 - 147.17
+nodo 129: OC - Papua Nueva Guinea - AIbaradoku - -9.50 - 147.90
+nodo 130: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+nodo 131: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+nodo 132: x - Australia - ACanberra - -35.28 - 149.12
+nodo 133: x - Australia - Canberra - -35.28 - 149.12
+nodo 134: x - Australia - Canberra - -35.28 - 149.12
+nodo 135: OC - Australia - Albion - -27.42 - 153.03
+nodo 136: OC - Australia - BAlbion - -27.42 - 153.03
+nodo 137: x - Vanuatu - AKoimarama - -13.90 - 167.47
+nodo 138: x - Vanuatu - Koimarama - -13.90 - 167.47
+
+		PRUEBAS DE VectorG
+
+
+	-> Seguimiento: Operaciones en lista vacia <-
+false
+false
+false
+false
+CiudadNoEncontradaExcepcion: Ciudad cualquiera
+java.lang.IndexOutOfBoundsException: 0
+null
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones con nulls <-
+CiudadNoEncontradaExcepcion
+false
+false
+null
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones de insercion <-
+-> Lista:
+posic 0: Continente - Pais - Ciudad4 - -8.33 - 8.27
+-> Lista:
+posic 0: Continente - Pais - Ciudad10 - -20.83 - 20.67
+-> Lista:
+posic 0: Continente - Pais - Ciudad0 - x - x
+posic 1: Continente - Pais - Ciudad1 - -2.08 - -9.13
+posic 2: Continente - Pais - Ciudad2 - -4.17 - -18.27
+posic 3: Continente - Pais - Ciudad3 - -6.25 - -27.40
+posic 4: Continente - Pais - Ciudad4 - -8.33 - 8.27
+posic 5: Continente - Pais - Ciudad5 - -10.42 - 10.33
+posic 6: Continente - Pais - Ciudad6 - 18.70 - -54.80
+posic 7: Continente - Pais - Ciudad7 - -14.58 - -63.93
+posic 8: Continente - Pais - Ciudad8 - x - 16.53
+posic 9: Continente - Pais - Ciudad9 - -18.75 - x
+posic 10: Continente - Pais - Ciudad10 - -20.83 - 20.67
+posic 11: Continente - Pais - Ciudad11 - -22.92 - -9.48
+posic 12: Continente - Pais - Ciudad12 - 36.42 - 24.80
+posic 13: Continente - Pais - Ciudad13 - -26.10 - -27.75
+posic 14: Continente - Pais - Ciudad14 - -28.18 - -36.88
+-> Lista:
+posic 0: Continente - Pais - Ciudad4 - -8.33 - 8.27
+posic 1: Continente - Pais - Ciudad0 - x - x
+posic 2: Continente - Pais - Ciudad1 - -2.08 - -9.13
+posic 3: Continente - Pais - Ciudad2 - -4.17 - -18.27
+posic 4: Continente - Pais - Ciudad3 - -6.25 - -27.40
+posic 5: Continente - Pais - Ciudad4 - -8.33 - 8.27
+posic 6: Continente - Pais - Ciudad5 - -10.42 - 10.33
+posic 7: Continente - Pais - Ciudad6 - 18.70 - -54.80
+posic 8: Continente - Pais - Ciudad7 - -14.58 - -63.93
+posic 9: Continente - Pais - Ciudad8 - x - 16.53
+posic 10: Continente - Pais - Ciudad9 - -18.75 - x
+posic 11: Continente - Pais - Ciudad10 - -20.83 - 20.67
+posic 12: Continente - Pais - Ciudad11 - -22.92 - -9.48
+posic 13: Continente - Pais - Ciudad12 - 36.42 - 24.80
+posic 14: Continente - Pais - Ciudad13 - -26.10 - -27.75
+posic 15: Continente - Pais - Ciudad14 - -28.18 - -36.88
+posic 16: Continente - Pais - Ciudad0 - x - x
+posic 17: Continente - Pais - Ciudad1 - -2.08 - -9.13
+posic 18: Continente - Pais - Ciudad2 - -4.17 - -18.27
+posic 19: Continente - Pais - Ciudad10 - -20.83 - 20.67
+
+	-> Seguimiento: Operaciones de consulta validas <-
+6
+Continente - Pais - Ciudad6 - 18 42 N - 54 48 O
+java.lang.IndexOutOfBoundsException: 100
+java.lang.IndexOutOfBoundsException: -1
+Continente - Pais - Ciudad4 - 8 20 S - 8 16 E
+Continente - Pais - Ciudad0 - x - x
+Continente - Pais - Ciudad1 - 2 5 S - 9 8 O
+Continente - Pais - Ciudad2 - 4 10 S - 18 16 O
+Continente - Pais - Ciudad3 - 6 15 S - 27 24 O
+Continente - Pais - Ciudad4 - 8 20 S - 8 16 E
+Continente - Pais - Ciudad5 - 10 25 S - 10 20 E
+Continente - Pais - Ciudad6 - 18 42 N - 54 48 O
+Continente - Pais - Ciudad7 - 14 35 S - 63 56 O
+Continente - Pais - Ciudad8 - x - 16 32 E
+Continente - Pais - Ciudad9 - 18 45 S - x
+Continente - Pais - Ciudad10 - 20 50 S - 20 40 E
+Continente - Pais - Ciudad11 - 22 55 S - 9 29 O
+Continente - Pais - Ciudad12 - 36 25 N - 24 48 E
+Continente - Pais - Ciudad13 - 26 6 S - 27 45 O
+Continente - Pais - Ciudad14 - 28 11 S - 36 53 O
+Continente - Pais - Ciudad0 - x - x
+Continente - Pais - Ciudad1 - 2 5 S - 9 8 O
+Continente - Pais - Ciudad2 - 4 10 S - 18 16 O
+Continente - Pais - Ciudad10 - 20 50 S - 20 40 E
+
+	-> Seguimiento: Operaciones de borrado <-
+true
+true
+true
+-> Lista:
+posic 0: Continente - Pais - Ciudad1 - -2.08 - -9.13
+posic 1: Continente - Pais - Ciudad2 - -4.17 - -18.27
+posic 2: Continente - Pais - Ciudad3 - -6.25 - -27.40
+posic 3: Continente - Pais - Ciudad4 - -8.33 - 8.27
+posic 4: Continente - Pais - Ciudad5 - -10.42 - 10.33
+posic 5: Continente - Pais - Ciudad6 - 18.70 - -54.80
+posic 6: Continente - Pais - Ciudad7 - -14.58 - -63.93
+posic 7: Continente - Pais - Ciudad8 - x - 16.53
+posic 8: Continente - Pais - Ciudad9 - -18.75 - x
+posic 9: Continente - Pais - Ciudad10 - -20.83 - 20.67
+posic 10: Continente - Pais - Ciudad11 - -22.92 - -9.48
+posic 11: Continente - Pais - Ciudad12 - 36.42 - 24.80
+posic 12: Continente - Pais - Ciudad13 - -26.10 - -27.75
+posic 13: Continente - Pais - Ciudad14 - -28.18 - -36.88
+posic 14: Continente - Pais - Ciudad0 - x - x
+posic 15: Continente - Pais - Ciudad1 - -2.08 - -9.13
+posic 16: Continente - Pais - Ciudad2 - -4.17 - -18.27
+false
+true
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Operaciones de consultas no validas <-
+CiudadNoEncontradaExcepcion: Ciudad5
+java.lang.IndexOutOfBoundsException: 7
+java.lang.IndexOutOfBoundsException: 0
+java.lang.IndexOutOfBoundsException: -1
+array nulo
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Consultas a datos con null <-
+0
+true
+Continente - x - x - x - x
+Continente - x - x - x - x
+true
+-> Lista:
+Lista vacia
+
+	-> Seguimiento: Leyendo lista facil <-
+-> Lista:
+posic 0: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+posic 1: AF - Togo - Abakouande - 9.40 - 1.25
+posic 2: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 3: NA - EEUU - Akulurak - 62.55 - -164.55
+posic 4: OC - Samoa - Alao - -14.27 - -170.55
+posic 5: EU - Spain - Sagra - 38.82 - -0.07
+
+	-> Seguimiento: Ordenacion de lista facil <-
+-> Lista:
+posic 0: OC - Samoa - Alao - -14.27 - -170.55
+posic 1: NA - EEUU - Akulurak - 62.55 - -164.55
+posic 2: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 3: EU - Spain - Sagra - 38.82 - -0.07
+posic 4: AF - Togo - Abakouande - 9.40 - 1.25
+posic 5: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+
+	-> Seguimiento: Leyendo lista jodida <-
+CoordenadaExcepcion: Longitud grados -170
+CoordenadaExcepcion: Latitud grados -30
+CoordenadaExcepcion: Longitud grados -73
+CoordenadaExcepcion: Longitud minutos 60
+CoordenadaExcepcion: Latitud minutos -15
+CoordenadaExcepcion: Latitud grados 91
+CoordenadaExcepcion: Latitud posicion O
+CoordenadaExcepcion: Longitud posicion W
+-> Lista:
+posic 0: EU - Spain - null - 38.78 - -2.52
+posic 1: EU - Spain - 1Abejuela - 39.90 - -0.88
+posic 2: EU - Spain - 1Pego - 38.85 - -7.13
+posic 3: EU - Spain - 1El Rodriguillo - 38.37 - -1.05
+posic 4: EU - Spain - 1Torrevieja - 37.98 - -0.68
+posic 5: EU - Spain - 1Sagra - 38.82 - -0.07
+posic 6: EU - Denmark - 1Aars - 56.80 - 9.50
+posic 7: EU - Spain - BAgres - 38.78 - -2.52
+posic 8: EU - Spain - BAbejuela - 39.90 - -0.88
+posic 9: EU - Spain - APego - 38.85 - -7.13
+posic 10: EU - Spain - AEl Rodriguillo - 38.37 - -1.05
+posic 11: EU - Spain - ATorrevieja - 37.98 - -0.68
+posic 12: EU - Spain - ASagra - 38.82 - -0.07
+posic 13: EU - Denmark - BAars - 56.80 - 9.50
+posic 14: x - Germany - ABerlin - 52.52 - 13.40
+posic 15: EU - Belgium - ABrussels - 50.85 - 4.33
+posic 16: EU - France - AParis - 48.85 - 2.33
+posic 17: OC - Australia - APerth - -41.57 - 147.17
+posic 18: x - Australia - ADarwin - -12.45 - 130.83
+posic 19: OC - Australia - BAdelaide - -34.93 - 138.60
+posic 20: OC - Tonga - AFonginonga - -19.75 - -174.33
+posic 21: OC - Samoa - APatamea - -13.52 - -172.30
+posic 22: OC - Papua Nueva Guinea - AIbaradoku - -9.50 - 147.90
+posic 23: OC - Australia - AMelbourne - -37.80 - 144.95
+posic 24: x - Australia - ACanberra - -35.28 - 149.12
+posic 25: OC - Australia - BAlbion - -27.42 - 153.03
+posic 26: x - Vanuatu - AKoimarama - -13.90 - 167.47
+posic 27: SA - Falkland Islands - Pebble Island Settlement - -51.32 - -59.60
+posic 28: SA - Uruguay - Abrojal - -31.75 - -55.02
+posic 29: SA - Argentina - Buenos Aires - -34.60 - -58.37
+posic 30: SA - Argentina - Cordoba - -31.40 - -64.18
+posic 31: SA - Brazil - Agostinho - -21.40 - -47.55
+posic 32: x - Bolivia - Iguazuru - -21.07 - -63.10
+posic 33: x - Paraguay - La Pastora - -25.23 - -56.53
+posic 34: AF - Congo - Abiana - -0.07 - 27.83
+posic 35: x - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 36: SA - Falkland Islands - Roy Cove Settlement - -51.53 - -60.38
+posic 37: SA - Falkland Islands - Mare Harbour Rancho - -51.90 - -58.40
+posic 38: NA - EEUU - Anchor Point - 59.77 - -151.82
+posic 39: x - EEUU - Aklut - 60.20 - -162.25
+posic 40: x - Greece - Agia Paraskevi - 39.00 - 21.78
+posic 41: EU - France - Nesmy - 46.58 - -1.40
+posic 42: x - France - Nantes - 47.22 - -1.55
+posic 43: EU - France - Casamozza - 42.52 - 9.43
+posic 44: EU - Russia - Annelovo - 60.30 - 30.50
+posic 45: SA - Brazil - Abacate - -1.12 - -49.65
+posic 46: x - Peru - Cuzco - -6.98 - -76.47
+posic 47: NA - Oklahoma - Dover - 35.97 - -97.90
+posic 48: NA - Arizona - Dobson - 32.47 - -111.28
+posic 49: NA - Idaho - Rebecca - 44.23 - -116.85
+posic 50: x - Nevada - Darroughs Hot Springs - 38.82 - -117.17
+posic 51: NA - Texas - Elmendorf - 29.25 - -98.32
+posic 52: NA - Montana - Buffalo - 46.82 - -109.82
+posic 53: NA - Minnesota - Bonnie Glen - 45.35 - -92.90
+posic 54: NA - Alabama - Abbeville - 31.57 - -85.25
+posic 55: x - Kansas - Abbyville - 37.97 - -98.20
+posic 56: x - Czech Republic - Belov - 49.20 - 17.48
+posic 57: EU - Slovakia - Abrahamovce - 49.03 - 20.43
+posic 58: EU - Ireland - Ballinameen - 53.90 - -8.30
+posic 59: EU - Portugal - Lisboa - 40.50 - -7.93
+posic 60: x - Italy - Roma - 41.88 - 12.48
+posic 61: EU - Spain - Abanilla - 39.20 - -2.05
+posic 62: EU - Spain - Alcubillas - 37.75 - -3.13
+posic 63: EU - Spain - Capellania - 37.92 - -2.12
+posic 64: EU - Spain - Barranco de los Asensios - 37.48 - -1.65
+posic 65: EU - Spain - El Gollizo - 38.52 - -4.42
+posic 66: EU - Spain - Alcoi - 38.70 - -3.47
+posic 67: EU - Spain - Huerta de la Obispalia - 39.98 - -2.48
+posic 68: x - Spain - Alcantud - 40.55 - -2.33
+posic 69: EU - Spain - Arroyo Cerezo - 40.12 - -1.42
+posic 70: x - Spain - Fuenterrobles - 39.58 - -1.35
+posic 71: EU - Spain - Agres - 38.78 - -2.52
+posic 72: EU - Spain - Abejuela - 39.90 - -0.88
+posic 73: EU - Spain - Pego - 38.85 - -7.13
+posic 74: EU - Spain - El Rodriguillo - 38.37 - -1.05
+posic 75: EU - Spain - Torrevieja - 37.98 - -0.68
+posic 76: EU - Spain - Sagra - 38.82 - -0.07
+posic 77: EU - Denmark - Aars - 56.80 - 9.50
+posic 78: x - Germany - Berlin - 52.52 - 13.40
+posic 79: EU - Belgium - Brussels - 50.85 - 4.33
+posic 80: EU - France - Paris - 48.85 - 2.33
+posic 81: OC - Australia - Perth - -41.57 - 147.17
+posic 82: x - Australia - Darwin - -12.45 - 130.83
+posic 83: OC - Australia - Adelaide - -34.93 - 138.60
+posic 84: OC - Tonga - Fonginonga - -19.75 - -174.33
+posic 85: OC - Samoa - Patamea - -13.52 - -172.30
+posic 86: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+posic 87: OC - Australia - Melbourne - -37.80 - 144.95
+posic 88: x - Australia - Canberra - -35.28 - 149.12
+posic 89: x - Vanuatu - Koimarama - -13.90 - 167.47
+posic 90: EU - Spain - Agres - 38.78 - -2.52
+posic 91: EU - Spain - Abejuela - 39.90 - -0.88
+posic 92: EU - Spain - Pego - 38.85 - -7.13
+posic 93: EU - Spain - El Rodriguillo - 38.37 - -1.05
+posic 94: EU - Spain - Torrevieja - 37.98 - -0.68
+posic 95: EU - Spain - Sagra - 38.82 - -0.07
+posic 96: EU - Denmark - Aars - 56.80 - 9.50
+posic 97: x - Germany - Berlin - 52.52 - 13.40
+posic 98: EU - Belgium - Brussels - 50.85 - 4.33
+posic 99: EU - France - Paris - 48.85 - 2.33
+posic 100: OC - Australia - Perth - -41.57 - 147.17
+posic 101: AF - Vanuatu - x - -13.90 - 30.83
+posic 102: x - Australia - Darwin - -12.45 - 130.83
+posic 103: OC - Australia - Adelaide - -34.93 - 138.60
+posic 104: OC - Tonga - Fonginonga - -19.75 - -174.33
+posic 105: OC - Samoa - Patamea - -13.52 - -172.30
+posic 106: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+posic 107: OC - Australia - Melbourne - -37.80 - 144.95
+posic 108: x - Australia - Canberra - -35.28 - 149.12
+posic 109: OC - Australia - Albion - -27.42 - 153.03
+posic 110: x - Vanuatu - Koimarama - -13.90 - 7.45
+posic 111: x - Zambia - Pungula - -13.18 - 27.45
+posic 112: AF - Botsuana - Telekele - -24.02 - 25.82
+posic 113: x - Zimbaue - Ngome - -19.70 - 31.82
+posic 114: AF - Tanzania - Mkutano - -7.32 - 31.70
+posic 115: AF - Uganda - Katerema - 0.63 - 34.08
+posic 116: AF - Congo - Kipele - -3.77 - 12.47
+posic 117: AF - Sudan - Saqadi - 17.10 - 33.65
+posic 118: AF - Niger - Losso Goungou - 13.52 - 2.03
+posic 119: AF - Camerun - Abang - 3.80 - 11.30
+posic 120: x - Chad - Adil - 9.90 - 16.05
+posic 121: AS - China - Changxin - 26.07 - 99.40
+posic 122: AS - Philippines - Manila - 14.60 - 120.97
+posic 123: AS - Laos - Ban Ban - 19.63 - 103.55
+posic 124: x - Bangladesh - Betmanda - 90.07 - 89.97
+posic 125: AS - Pakistan - x - 33.60 - 73.27
+posic 126: x - x - Gazeh - 36.67 - 55.87
+posic 127: x - Nepal - Dhundras - 28.93 - 81.08
+posic 128: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+posic 129: AF - Togo - Abakouande - 9.40 - 1.25
+posic 130: SA - Ecuador - Quiroz - -0.27 - -77.17
+posic 131: NA - Nebraska - Cotesfield - 41.35 - -98.62
+posic 132: EU - Spain - Barcelona - 41.38 - 2.15
+posic 133: OC - Samoa - Alao - -14.27 - -170.55
+posic 134: NA - EEUU - Akulurak - 62.55 - -164.55
+posic 135: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 136: EU - Spain - Sagra - 38.82 - -0.07
+posic 137: AF - Togo - Abakouande - 9.40 - 1.25
+posic 138: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+
+	-> Seguimiento: Ordenacion de lista jodida <-
+-> Lista:
+posic 0: OC - Tonga - AFonginonga - -19.75 - -174.33
+posic 1: OC - Tonga - Fonginonga - -19.75 - -174.33
+posic 2: OC - Tonga - Fonginonga - -19.75 - -174.33
+posic 3: OC - Samoa - APatamea - -13.52 - -172.30
+posic 4: OC - Samoa - Patamea - -13.52 - -172.30
+posic 5: OC - Samoa - Patamea - -13.52 - -172.30
+posic 6: OC - Samoa - Alao - -14.27 - -170.55
+posic 7: NA - EEUU - Akulurak - 62.55 - -164.55
+posic 8: x - EEUU - Aklut - 60.20 - -162.25
+posic 9: NA - EEUU - Anchor Point - 59.77 - -151.82
+posic 10: x - Nevada - Darroughs Hot Springs - 38.82 - -117.17
+posic 11: NA - Idaho - Rebecca - 44.23 - -116.85
+posic 12: NA - Arizona - Dobson - 32.47 - -111.28
+posic 13: NA - Montana - Buffalo - 46.82 - -109.82
+posic 14: NA - Nebraska - Cotesfield - 41.35 - -98.62
+posic 15: NA - Texas - Elmendorf - 29.25 - -98.32
+posic 16: x - Kansas - Abbyville - 37.97 - -98.20
+posic 17: NA - Oklahoma - Dover - 35.97 - -97.90
+posic 18: NA - Minnesota - Bonnie Glen - 45.35 - -92.90
+posic 19: NA - Alabama - Abbeville - 31.57 - -85.25
+posic 20: SA - Ecuador - Quiroz - -0.27 - -77.17
+posic 21: x - Peru - Cuzco - -6.98 - -76.47
+posic 22: SA - Argentina - Cordoba - -31.40 - -64.18
+posic 23: x - Bolivia - Iguazuru - -21.07 - -63.10
+posic 24: SA - Falkland Islands - Roy Cove Settlement - -51.53 - -60.38
+posic 25: x - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 26: SA - Falkland Islands - Speedwell Island Settlement - 52.22 - -59.68
+posic 27: SA - Falkland Islands - Pebble Island Settlement - -51.32 - -59.60
+posic 28: SA - Falkland Islands - Mare Harbour Rancho - -51.90 - -58.40
+posic 29: SA - Argentina - Buenos Aires - -34.60 - -58.37
+posic 30: x - Paraguay - La Pastora - -25.23 - -56.53
+posic 31: SA - Uruguay - Abrojal - -31.75 - -55.02
+posic 32: SA - Brazil - Abacate - -1.12 - -49.65
+posic 33: SA - Brazil - Agostinho - -21.40 - -47.55
+posic 34: EU - Ireland - Ballinameen - 53.90 - -8.30
+posic 35: EU - Portugal - Lisboa - 40.50 - -7.93
+posic 36: EU - Spain - 1Pego - 38.85 - -7.13
+posic 37: EU - Spain - APego - 38.85 - -7.13
+posic 38: EU - Spain - Pego - 38.85 - -7.13
+posic 39: EU - Spain - Pego - 38.85 - -7.13
+posic 40: EU - Spain - El Gollizo - 38.52 - -4.42
+posic 41: EU - Spain - Alcoi - 38.70 - -3.47
+posic 42: EU - Spain - Alcubillas - 37.75 - -3.13
+posic 43: EU - Spain - Agres - 38.78 - -2.52
+posic 44: EU - Spain - Agres - 38.78 - -2.52
+posic 45: EU - Spain - BAgres - 38.78 - -2.52
+posic 46: EU - Spain - null - 38.78 - -2.52
+posic 47: EU - Spain - Huerta de la Obispalia - 39.98 - -2.48
+posic 48: x - Spain - Alcantud - 40.55 - -2.33
+posic 49: EU - Spain - Capellania - 37.92 - -2.12
+posic 50: EU - Spain - Abanilla - 39.20 - -2.05
+posic 51: EU - Spain - Barranco de los Asensios - 37.48 - -1.65
+posic 52: x - France - Nantes - 47.22 - -1.55
+posic 53: EU - Spain - Arroyo Cerezo - 40.12 - -1.42
+posic 54: EU - France - Nesmy - 46.58 - -1.40
+posic 55: x - Spain - Fuenterrobles - 39.58 - -1.35
+posic 56: EU - Spain - 1El Rodriguillo - 38.37 - -1.05
+posic 57: EU - Spain - AEl Rodriguillo - 38.37 - -1.05
+posic 58: EU - Spain - El Rodriguillo - 38.37 - -1.05
+posic 59: EU - Spain - El Rodriguillo - 38.37 - -1.05
+posic 60: EU - Spain - 1Abejuela - 39.90 - -0.88
+posic 61: EU - Spain - Abejuela - 39.90 - -0.88
+posic 62: EU - Spain - Abejuela - 39.90 - -0.88
+posic 63: EU - Spain - BAbejuela - 39.90 - -0.88
+posic 64: EU - Spain - 1Torrevieja - 37.98 - -0.68
+posic 65: EU - Spain - ATorrevieja - 37.98 - -0.68
+posic 66: EU - Spain - Torrevieja - 37.98 - -0.68
+posic 67: EU - Spain - Torrevieja - 37.98 - -0.68
+posic 68: EU - Spain - 1Sagra - 38.82 - -0.07
+posic 69: EU - Spain - ASagra - 38.82 - -0.07
+posic 70: EU - Spain - Sagra - 38.82 - -0.07
+posic 71: EU - Spain - Sagra - 38.82 - -0.07
+posic 72: EU - Spain - Sagra - 38.82 - -0.07
+posic 73: AF - Togo - Abakouande - 9.40 - 1.25
+posic 74: AF - Togo - Abakouande - 9.40 - 1.25
+posic 75: AF - Niger - Losso Goungou - 13.52 - 2.03
+posic 76: EU - Spain - Barcelona - 41.38 - 2.15
+posic 77: EU - France - AParis - 48.85 - 2.33
+posic 78: EU - France - Paris - 48.85 - 2.33
+posic 79: EU - France - Paris - 48.85 - 2.33
+posic 80: EU - Belgium - ABrussels - 50.85 - 4.33
+posic 81: EU - Belgium - Brussels - 50.85 - 4.33
+posic 82: EU - Belgium - Brussels - 50.85 - 4.33
+posic 83: x - Vanuatu - Koimarama - -13.90 - 7.45
+posic 84: EU - France - Casamozza - 42.52 - 9.43
+posic 85: EU - Denmark - 1Aars - 56.80 - 9.50
+posic 86: EU - Denmark - Aars - 56.80 - 9.50
+posic 87: EU - Denmark - Aars - 56.80 - 9.50
+posic 88: EU - Denmark - BAars - 56.80 - 9.50
+posic 89: AF - Camerun - Abang - 3.80 - 11.30
+posic 90: AF - Congo - Kipele - -3.77 - 12.47
+posic 91: x - Italy - Roma - 41.88 - 12.48
+posic 92: x - Germany - ABerlin - 52.52 - 13.40
+posic 93: x - Germany - Berlin - 52.52 - 13.40
+posic 94: x - Germany - Berlin - 52.52 - 13.40
+posic 95: x - Chad - Adil - 9.90 - 16.05
+posic 96: x - Czech Republic - Belov - 49.20 - 17.48
+posic 97: EU - Slovakia - Abrahamovce - 49.03 - 20.43
+posic 98: x - Greece - Agia Paraskevi - 39.00 - 21.78
+posic 99: AF - Botsuana - Telekele - -24.02 - 25.82
+posic 100: x - Zambia - Pungula - -13.18 - 27.45
+posic 101: AF - Congo - Abiana - -0.07 - 27.83
+posic 102: EU - Russia - Annelovo - 60.30 - 30.50
+posic 103: AF - Vanuatu - x - -13.90 - 30.83
+posic 104: AF - Tanzania - Mkutano - -7.32 - 31.70
+posic 105: x - Zimbaue - Ngome - -19.70 - 31.82
+posic 106: AF - Sudan - Saqadi - 17.10 - 33.65
+posic 107: AF - Uganda - Katerema - 0.63 - 34.08
+posic 108: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+posic 109: AS - Saudi Arabia - Abu Maragh - 21.52 - 39.78
+posic 110: x - x - Gazeh - 36.67 - 55.87
+posic 111: AS - Pakistan - x - 33.60 - 73.27
+posic 112: x - Nepal - Dhundras - 28.93 - 81.08
+posic 113: x - Bangladesh - Betmanda - 90.07 - 89.97
+posic 114: AS - China - Changxin - 26.07 - 99.40
+posic 115: AS - Laos - Ban Ban - 19.63 - 103.55
+posic 116: AS - Philippines - Manila - 14.60 - 120.97
+posic 117: x - Australia - ADarwin - -12.45 - 130.83
+posic 118: x - Australia - Darwin - -12.45 - 130.83
+posic 119: x - Australia - Darwin - -12.45 - 130.83
+posic 120: OC - Australia - Adelaide - -34.93 - 138.60
+posic 121: OC - Australia - Adelaide - -34.93 - 138.60
+posic 122: OC - Australia - BAdelaide - -34.93 - 138.60
+posic 123: OC - Australia - AMelbourne - -37.80 - 144.95
+posic 124: OC - Australia - Melbourne - -37.80 - 144.95
+posic 125: OC - Australia - Melbourne - -37.80 - 144.95
+posic 126: OC - Australia - APerth - -41.57 - 147.17
+posic 127: OC - Australia - Perth - -41.57 - 147.17
+posic 128: OC - Australia - Perth - -41.57 - 147.17
+posic 129: OC - Papua Nueva Guinea - AIbaradoku - -9.50 - 147.90
+posic 130: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+posic 131: OC - Papua Nueva Guinea - Ibaradoku - -9.50 - 147.90
+posic 132: x - Australia - ACanberra - -35.28 - 149.12
+posic 133: x - Australia - Canberra - -35.28 - 149.12
+posic 134: x - Australia - Canberra - -35.28 - 149.12
+posic 135: OC - Australia - Albion - -27.42 - 153.03
+posic 136: OC - Australia - BAlbion - -27.42 - 153.03
+posic 137: x - Vanuatu - AKoimarama - -13.90 - 167.47
+posic 138: x - Vanuatu - Koimarama - -13.90 - 167.47

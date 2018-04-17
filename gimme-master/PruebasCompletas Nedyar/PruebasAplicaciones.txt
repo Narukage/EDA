@@ -1,0 +1,39 @@
+	Pruebas de Busqueda por rango
+
+NO HAY SALIDA
+
+NO HAY SALIDA
+
+EU - Norway - Hammerfest - 70.63 - 23.63
+AS - Russia - Moscow - 55.75 - 37.60
+AS - Iran - Teheran - 35.75 - 51.75
+
+SA - Chile - Santa madre de Dios jejjeej saluds - -33.47 - -70.75
+SA - Chile - Santiago - -33.47 - -70.75
+SA - Argentina - Cordoba - -31.47 - -64.17
+SA - Argentina - Buenos Aires - -34.58 - -58.37
+AF - Senegal - Dakar - 14.67 - -17.47
+EU - France - Bordeaux - 44.83 - -0.52
+AF - Libya - Tripoli - 32.95 - 13.20
+EU - Norway - Hammerfest - 70.63 - 23.63
+AS - Russia - Moscow - 55.75 - 37.60
+AS - Iran - Teheran - 35.75 - 51.75
+
+AS - Iran - Teheran - 35.75 - 51.75
+
+
+	Pruebas de Busqueda por paises
+
+Argentina (2): Buenos Aires - Cordoba
+Chile (2): Santa madre de Dios jejjeej saluds - Santiago
+France (1): Bordeaux
+Iran (1): Teheran
+Libya (1): Tripoli
+Norway (1): Hammerfest
+Russia (1): Moscow
+Senegal (1): Dakar
+
+Argentina (2): Buenos Aires - Cordoba
+
+Senegal (1): Dakar
+

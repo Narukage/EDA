@@ -1,0 +1,33 @@
+insertando AS-tailandia-bangladesh 
+nodo 0: AS - tailandia - bangladesh - 0.00 - 0.00
+------------
+insertnado AS-china-pekin
+nodo 0: AS - china - pekin - 0.00 - 0.00
+nodo 1: AS - tailandia - bangladesh - 0.00 - 0.00
+-------------
+insertando AS-china-shangai
+nodo 0: AS - china - shangai - 0.00 - 0.00
+nodo 1: AS - china - pekin - 0.00 - 0.00
+nodo 2: AS - tailandia - bangladesh - 0.00 - 0.00
+-------------
+inserntando AS-japon-tokio
+nodo 0: AS - japon - tokio - 0.00 - 0.00
+nodo 1: AS - china - shangai - 0.00 - 0.00
+nodo 2: AS - china - pekin - 0.00 - 0.00
+nodo 3: AS - tailandia - bangladesh - 0.00 - 0.00
+-------------
+true
+borrando...
+nodo 0: AS - china - shangai - 0.00 - 0.00
+nodo 1: AS - china - pekin - 0.00 - 0.00
+nodo 2: AS - tailandia - bangladesh - 0.00 - 0.00
+true
+borrando...
+nodo 0: AS - china - pekin - 0.00 - 0.00
+nodo 1: AS - tailandia - bangladesh - 0.00 - 0.00
+true
+borrando...
+nodo 0: AS - tailandia - bangladesh - 0.00 - 0.00
+true
+borrando...
+borrando cola de vacio => false

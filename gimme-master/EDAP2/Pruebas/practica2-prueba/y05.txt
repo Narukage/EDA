@@ -1,0 +1,35 @@
+----------probando insertaArrayPLoc-----------
+insertando array vacio
+
+insertando un array guay
+posic 0: AS - x - ciudad x - 0.00 - 0.00
+posic 1: AS - x - ciudad 12 - 0.00 - 0.00
+posic 2: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 3: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 4: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 5: AS - en medio country - ciudad 14 - 0.00 - 0.00
+posic 6: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 7: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 8: AS - otro pais - ciudad 17 - 0.00 - 0.00
+posic 9: AS - otro pais - ciudad 18 - 0.00 - 0.00
+insertando array en lista no vacia
+posic 0: AS - es es una moto - estoy el segundo - 0.00 - 0.00
+posic 1: AS - esto es un pais - esto al principio - 0.00 - 0.00
+posic 2: AS - x - ciudad x - 0.00 - 0.00
+posic 3: AS - x - ciudad 12 - 0.00 - 0.00
+posic 4: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 5: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 6: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 7: AS - en medio country - ciudad 14 - 0.00 - 0.00
+posic 8: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 9: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 10: AS - otro pais - ciudad 17 - 0.00 - 0.00
+posic 11: AS - otro pais - ciudad 18 - 0.00 - 0.00
+---------probando ciudadEnLista---------------
+buscando ciudad en lista vacia
+CiudadNoEncontradaExcepcion: no estoy
+ciudad null no encontrada
+ciudad mi ciudad no encontrada
+buscando cidudad que esta dos veces ciudad 12: 3
+insertando una ciudad null y buscando en la lista
+busncando null, encontrado en la posicion 12

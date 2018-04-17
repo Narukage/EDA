@@ -1,0 +1,54 @@
+Continente: NA, Lmax: 15.75
+
+CIUDADES FRONTERIZAS
+ciudad1 (pais1) - ciudad7 (pais4)
+ciudad4 (pais2) - ciudad7 (pais4)
+ciudad3 (pais1) - ciudad5 (pais2)
+ciudad2 (pais1) - ciudad7 (pais4)
+ciudad6 (pais3) - ciudad5 (pais2)
+CIUDADES FRONTERIZAS MUTUAS
+ciudad1 (pais1) - ciudad7 (pais4)
+ciudad3 (pais1) - ciudad5 (pais2)
+
+Continente: AS, Lmax: 28.26
+NO HAY FRONTERAS INTRACONTINENTALES
+
+Continente: AS, Lmax: 5.86
+NO HAY FRONTERAS INTRACONTINENTALES
+
+Continente: EU, Lmax: 35.25
+CIUDADES FRONTERIZAS
+ciudad5 (pais5) - ciudad8 (pais8)
+ciudad4 (pais4) - ciudad7 (pais7)
+ciudad3 (pais3) - ciudad6 (pais6)
+ciudad2 (pais2) - ciudad8 (pais8)
+CIUDADES FRONTERIZAS MUTUAS
+ciudad5 (pais5) - ciudad8 (pais8)
+ciudad4 (pais4) - ciudad7 (pais7)
+ciudad3 (pais3) - ciudad6 (pais6)
+
+Continente: AS, Lmax: 10.42
+NO HAY FRONTERAS INTRACONTINENTALES
+
+Continente: NA, Lmax: 23.65
+CIUDADES FRONTERIZAS
+ciudad1 (pais1) - ciudad7 (pais4)
+ciudad4 (pais2) - ciudad7 (pais4)
+ciudad3 (pais1) - ciudad5 (pais2)
+ciudad2 (pais1) - ciudad7 (pais4)
+ciudad6 (pais3) - ciudad5 (pais2)
+CIUDADES FRONTERIZAS MUTUAS
+ciudad1 (pais1) - ciudad7 (pais4)
+ciudad3 (pais1) - ciudad5 (pais2)
+
+Continente: EU, Lmax: 8.78
+CIUDADES FRONTERIZAS
+ciudad5 (pais5) - ciudad8 (pais8)
+ciudad4 (pais4) - ciudad7 (pais7)
+ciudad3 (pais3) - ciudad6 (pais6)
+ciudad2 (pais2) - ciudad8 (pais8)
+ciudad1 (pais1) - ciudad7 (pais7)
+CIUDADES FRONTERIZAS MUTUAS
+ciudad5 (pais5) - ciudad8 (pais8)
+ciudad4 (pais4) - ciudad7 (pais7)
+ciudad3 (pais3) - ciudad6 (pais6)

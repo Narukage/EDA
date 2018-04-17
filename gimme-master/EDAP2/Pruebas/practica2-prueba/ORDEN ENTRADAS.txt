@@ -1,0 +1,4 @@
+El orden de los argumentos de entrada del main DEBE ser:
+
+1.- pruebaloTodo.dat
+2.- pruebaloTodoJodido.dat

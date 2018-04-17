@@ -1,0 +1,28 @@
+getPLoc de lista vacia..
+java.lang.IndexOutOfBoundsException: 0
+buscando localidades en la lista
+posic 0: AS - x - ciudad x - 0.00 - 0.00
+posic 1: AS - x - ciudad 12 - 0.00 - 0.00
+posic 2: AS - mi pais - ciudad 13 - 0.00 - 0.00
+posic 3: AS - mi pais - ciudad 12 - 0.00 - 0.00
+posic 4: AS - pais b - ciudad 11 - 0.00 - 0.00
+posic 5: AS - en medio country - ciudad 14 - 0.00 - 0.00
+posic 6: AS - pais d - ciudad 15 - 0.00 - 0.00
+posic 7: AS - pais d - ciudad 16 - 0.00 - 0.00
+posic 8: AS - otro pais - ciudad 17 - 0.00 - 0.00
+posic 9: AS - otro pais - ciudad 18 - 0.00 - 0.00
+ciudad en posicion 0: 
+AS - x - ciudad x - 0.00 - 0.00
+ciudad en posicion  3: 
+AS - mi pais - ciudad 12 - 0.00 - 0.00
+ciudad en posicion 9: 
+AS - otro pais - ciudad 18 - 0.00 - 0.00
+buscando en posiciones imposibles---
+buscando en posicion -1
+java.lang.IndexOutOfBoundsException: -1
+buscando en posicion 10
+java.lang.IndexOutOfBoundsException: 10
+buscando en posicion -10
+java.lang.IndexOutOfBoundsException: -10
+buscando en posicion 13
+java.lang.IndexOutOfBoundsException: 13

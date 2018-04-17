@@ -1,0 +1,20 @@
+buscando pais en lista vacia
+null
+buscamos en la lista:
+nodo 0: AS - x - ciudad x - 0.00 - 0.00
+nodo 1: AS - x - x - 0.00 - 0.00
+nodo 2: AS - mi pais - ciudad 13 - 0.00 - 0.00
+nodo 3: AS - mi pais - ciudad 12 - 0.00 - 0.00
+nodo 4: AS - pais b - ciudad 11 - 0.00 - 0.00
+nodo 5: AS - en medio country - ciudad 14 - 0.00 - 0.00
+nodo 6: AS - pais d - ciudad 15 - 0.00 - 0.00
+nodo 7: AS - x - ciudad 16 - 0.00 - 0.00
+nodo 8: AS - otro pais - ciudad 17 - 0.00 - 0.00
+nodo 9: AS - otro pais - ciudad 18 - 0.00 - 0.00
+buscando pais null
+AS - x - ciudad x - 0.00 - 0.00
+AS - x - x - 0.00 - 0.00
+AS - x - ciudad 16 - 0.00 - 0.00
+buscamos otro pais: 
+AS - otro pais - ciudad 17 - 0.00 - 0.00
+AS - otro pais - ciudad 18 - 0.00 - 0.00

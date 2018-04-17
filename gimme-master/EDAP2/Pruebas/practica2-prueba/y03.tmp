@@ -1,0 +1,19 @@
+false
+false
+borrando tokio => true
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+posic 2: AS - china - shangai - 0.00 - 0.00
+borrando tokio => false
+posic 0: AS - tailandia - bangladesh - 0.00 - 0.00
+posic 1: AS - china - pekin - 0.00 - 0.00
+posic 2: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+posic 0: AS - china - pekin - 0.00 - 0.00
+posic 1: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+posic 0: AS - china - shangai - 0.00 - 0.00
+boorando tailanda => true
+borrando de lista que quedo vacia false
+posic 0: AS - mauritius - x - 0.00 - 0.00
+boorrando null true
