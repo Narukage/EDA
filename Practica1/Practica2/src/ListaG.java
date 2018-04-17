@@ -18,7 +18,19 @@ public class ListaG implements Lista{
 	//Escribe los valores de la lista
 	public void escribeListaG()
 	{
-		
+		//Recorremos la lista entera
+		NodoLG posicion = pr;
+		int indice = 0;       //indice del nodo actual
+		while(posicion != null)
+		{
+			//Escribimos la informacion
+			System.out.print("nodo "+indice+": ");
+			posicion.get_ploc().escribeInfoGps();
+			
+			//Salto a la siguiente posicion
+			posicion = posicion.get_next();
+			indice++;
+		}
 	}
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -202,9 +214,9 @@ public class ListaG implements Lista{
 		}
 		
 		//Recorremos hasta llegar al final
-		NodoLG aux = pr;
-		while(aux.get_next() != null)
-			aux = aux.get_next();
+		NodoLG posicion = pr;
+		while(posicion.get_next() != null)
+			posicion = posicion.get_next();
 		
 		//Recorremos la lista insertandolos en orden
 		for(int i = 0; i < v.length; i++)
@@ -212,8 +224,8 @@ public class ListaG implements Lista{
 			if(v[i] != null)
 			{
 				NodoLG n = new NodoLG(v[i]);
-				aux.set_next(n);
-				aux = n;
+				posicion.set_next(n);
+				posicion = n;
 			}
 		}
 	}
@@ -245,12 +257,12 @@ public class ListaG implements Lista{
 		}
 
 		//Recorremos hasta el penultimo nodo
-		NodoLG aux = pr;
-		while(aux.get_next().get_next() != null)
-			aux = aux.get_next();
+		NodoLG posicion = pr;
+		while(posicion.get_next().get_next() != null)
+			posicion = posicion.get_next();
 		
 		//Lo ponemos a nulo, borrandolo de la lista
-		aux.set_next(null);
+		posicion.set_next(null);
 		return true;
 		
 	}
@@ -264,17 +276,17 @@ public class ListaG implements Lista{
 			throw new CiudadNoEncontradaExcepcion(v);
 		
 		//Recorremos la lista entera
-		NodoLG aux = pr; //primera posicion
+		NodoLG posicion = pr; //primera posicion
 		int indice = 0;  //Contador de posiciones
-		while(aux != null)
+		while(posicion != null)
 		{
 			//vemos si el nombre coincide
 			//?? la ciudad del ploc en la lista y el string pasado por parametro tienen que coincidir con equals, equalsIgnoreCase o tienen que ocupar la misma posicion de memoria los strings?
-			if(aux.get_ploc().getCiudad() != null && aux.get_ploc().getCiudad().equalsIgnoreCase(v))
+			if(posicion.get_ploc().getCiudad() != null && posicion.get_ploc().getCiudad().equalsIgnoreCase(v))
 				return indice;
 			
 			//Punto siguiente en la lista
-			aux = aux.get_next();
+			posicion = posicion.get_next();
 			indice++;
 		}
 		
@@ -302,19 +314,19 @@ public class ListaG implements Lista{
 		}
 		
 		//Recorremos la lista
-		NodoLG aux = pr;
-		while(aux.get_next() != null)
+		NodoLG posicion = pr;
+		while(posicion.get_next() != null)
 		{
 			//aux -> next -> next.next ==> si next es el ploc correcto ==> aux --> next.next
-			if(aux.get_next().get_ploc().getCiudad() != null 
-		    && aux.get_next().get_ploc().getCiudad().equalsIgnoreCase(v))
+			if(posicion.get_next().get_ploc().getCiudad() != null 
+		    && posicion.get_next().get_ploc().getCiudad().equalsIgnoreCase(v))
 			{
-				aux.set_next(aux.get_next().get_next());
+				posicion.set_next(posicion.get_next().get_next());
 				return true;
 			}
 			
 			//Siguiente elemento
-			aux = aux.get_next();
+			posicion = posicion.get_next();
 		}
 		
 		//Llegados aqui todo ha fallado
@@ -333,20 +345,20 @@ public class ListaG implements Lista{
 			return false;	
 		
 		//Recorremos la lista
-		NodoLG aux = pr;
+		NodoLG posicion = pr;
 		int ocurrencias = 0;
-		while(aux.get_next() != null)
+		while(posicion.get_next() != null)
 		{
 			//aux -> next -> next.next ==> si next es el ploc correcto ==> aux --> next.next
-			if(aux.get_next().get_ploc().getPais() != null 
-		    && aux.get_next().get_ploc().getPais().equalsIgnoreCase(s))
+			if(posicion.get_next().get_ploc().getPais() != null 
+		    && posicion.get_next().get_ploc().getPais().equalsIgnoreCase(s))
 			{
-				aux.set_next(aux.get_next().get_next());
+				posicion.set_next(posicion.get_next().get_next());
 				ocurrencias++;
 			}
 			else{
 				//Siguiente elemento
-				aux = aux.get_next();
+				posicion = posicion.get_next();
 			}
 		}
 		
@@ -371,15 +383,15 @@ public class ListaG implements Lista{
 			throw new IndexOutOfBoundsException(""+pos);
 		
 		//Recorremos la lista buscando el elementos
-		NodoLG aux = pr;
+		NodoLG posicion = pr;
 		int contador = 0;
-		while(aux != null)
+		while(posicion != null)
 		{
 			if(contador == pos)
-				return aux.get_ploc();
+				return posicion.get_ploc();
 			
 			//salto de elemento
-			aux = aux.get_next();
+			posicion = posicion.get_next();
 			pos++;
 		}
 		
@@ -398,13 +410,77 @@ public class ListaG implements Lista{
 		if(p == null || p.equals(""))
 			return null;
 		
+		//Contar ocurrencias del pais
+		NodoLG posicion = pr;
+		int ocurrencias = 0;
+		while(posicion != null)
+		{
+			if(posicion.get_ploc().getPais() != null 
+			&& posicion.get_ploc().getPais().equalsIgnoreCase(p))
+				ocurrencias++;
+			
+			//Salto de posicion
+			posicion = posicion.get_next();
+		}
 		
+		//Si no hay, devuelve nulo
+		if(ocurrencias == 0)
+			return null;
+		
+		//Array de almacenaje con el tamanyo conocido
+		PLoc[] array = new PLoc[ocurrencias];
+		
+		//Recorremos la lista de nuevo almacenando en el array los plocs indicados
+		posicion = pr;
+		int indice = 0;
+		while(posicion != null)
+		{
+			if(posicion.get_ploc().getPais() != null 
+			&& posicion.get_ploc().getPais().equalsIgnoreCase(p))
+			{
+				array[indice] = posicion.get_ploc(); 
+				indice++;
+			}
+			
+			//Salto de posicion
+			posicion = posicion.get_next();
+		}
+		
+		//devolvemos el array final
+		return array;
 	}
 	
 	//Ordena el array de PLocs
+	//?? Se pueden ordenar solo los PLocs o se tienen que ordenar los objetos de tipo NodoLG?
 	public void ordenaLista()
 	{
+		//Guardian de vacio
+		if(pr == null)
+			return;
+
+		//Bubble sort
+		NodoLG posicion = pr;
+		NodoLG posicion2 = pr.get_next();
 		
+		//Recorremos el array desde la posicion 0 y 0+1; repitiendo el patron hasta el final
+		while(posicion != null && posicion.get_next() != null)
+		{
+			while(posicion2 != null)
+			{
+				//Comprobacion
+				if(posicion.get_ploc().compareTo(posicion2.get_ploc()) < 0)
+				{
+					PLoc intercambio = posicion.get_ploc();
+				}
+				
+				//Salto de posicion
+				posicion2 = posicion2.get_next();
+			}
+			
+			//Salto de posicion
+			posicion = posicion.get_next();
+			posicion2 = posicion.get_next();
+		}
 	}
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

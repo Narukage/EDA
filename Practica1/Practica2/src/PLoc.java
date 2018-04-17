@@ -173,6 +173,52 @@ public class PLoc {
 		return f.format(g);
     }
 
+	//Ordena plocs en orden creciente (-1 derecha mas grande, 1 mas grande izquierda, 0 son iguales)
+	public int compareTo(PLoc p){
+		//Guardianes de nulo
+		if(p          == null)
+			return  1;
+		
+		if(p.getGps() == null)
+			return  1;
+		
+		if(getGps()   == null)
+			return -1;
+
+		//Iguales
+		if(getGps()[1] == p.getGps()[1])
+		{
+			//?? Cual es el orden si alguna de las ciudades es nula?
+			if(ciudad        == null)
+				return -1;
+			
+			if(p.getCiudad() == null)
+				return  1;
+			
+			//Iguales = 0
+			if(p.getCiudad().equalsIgnoreCase(ciudad))
+				return 0;
+			
+			//Instancia < parametro
+			if(ciudad.compareToIgnoreCase(p.getCiudad()) < 0)
+				return -1;
+			
+			//Instancia > parametro
+			if(ciudad.compareToIgnoreCase(p.getCiudad()) > 0)
+				return 1;
+		}
+		
+		//Instancia > parametro = 1
+		if(getGps()[1] > p.getGps()[1])
+			return 1;
+		
+		//Instancia < parametro = -1
+		if(getGps()[1] < p.getGps()[1])
+			return -1;
+		
+		return 0;
+	}
+	
    //NEW, metodo setter para hacer la aplicacion
    public void set_continente(String c){ continente=c; }
 
