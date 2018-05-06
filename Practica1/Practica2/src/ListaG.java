@@ -483,6 +483,53 @@ public class ListaG implements Lista{
 		}
 	}
 	
+	//NEW, Devuelve los PLocs que pertenecen a ese continente
+	public PLoc[] del_continente(String p)
+	{
+		//Guardian de nulo y texto valido
+		if(p == null || p.equals(""))
+			return null;
+		
+		//Contar ocurrencias del continente
+		NodoLG posicion = pr;
+		int ocurrencias = 0;
+		while(posicion != null)
+		{
+			if(posicion.get_ploc().getContinente() != null 
+			&& posicion.get_ploc().getContinente().equalsIgnoreCase(p))
+				ocurrencias++;
+			
+			//Salto de posicion
+			posicion = posicion.get_next();
+		}
+		
+		//Si no hay, devuelve nulo
+		if(ocurrencias == 0)
+			return null;
+		
+		//Array de almacenaje con el tamanyo conocido
+		PLoc[] array = new PLoc[ocurrencias];
+		
+		//Recorremos la lista de nuevo almacenando en el array los plocs indicados
+		posicion = pr;
+		int indice = 0;
+		while(posicion != null)
+		{
+			if(posicion.get_ploc().getContinente() != null 
+			&& posicion.get_ploc().getContinente().equalsIgnoreCase(p))
+			{
+				array[indice] = posicion.get_ploc(); 
+				indice++;
+			}
+			
+			//Salto de posicion
+			posicion = posicion.get_next();
+		}
+		
+		//devolvemos el array final
+		return array;
+	}
+	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	//Clase privada NodoLG
 	private class NodoLG

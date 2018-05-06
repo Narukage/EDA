@@ -9,8 +9,10 @@ public class PLoc {
     private Coordenada latitud;
     private Coordenada longitud;
     private double[] gps;
-    //Variable auxiliar para saber si tenia previamente continente
+    //NEW, Variable auxiliar para saber si tenia previamente continente
     private boolean no_tenia_continente;
+    //NEW, Variable auxiliar que indica el PLoc mas cercano dentro del rango
+    private PLoc ploc_cercano;
     
     //Constructor
     public PLoc(){
@@ -220,13 +222,19 @@ public class PLoc {
 	}
 	
    //NEW, metodo setter para hacer la aplicacion
-   public void set_continente(String c){ continente=c; }
+   public void set_continente(String c)			  { continente=c;               }
 
    //NEW, metodo getter para saber si tenia continente previamente
    public void set_no_tenia_continente(boolean t) { no_tenia_continente = t;    }
+
+   //NEW, metodo setter para la variable que dicta si tenia continente previamente a que se le insertara
+   public void set_ploc_cercano(PLoc p)      	  { ploc_cercano = p; 		 	}
    
    //NEW, metodo setter para la variable que dicta si tenia continente previamente a que se le insertara
    public boolean get_no_tenia_continente()       { return no_tenia_continente; }
-   
+
+   //NEW, metodo setter para la variable que dicta si tenia continente previamente a que se le insertara
+   public PLoc get_ploc_cercano()          		  { return ploc_cercano; 		}
+
    
 }
