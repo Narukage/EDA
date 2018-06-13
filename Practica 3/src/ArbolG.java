@@ -1,4 +1,4 @@
-//DNI 48620792B BARBA ROBLES, ALBERTO
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,460 +6,333 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeSet;
 
+import ArbolG.NodoAG;
+
 public class ArbolG extends Arbol {
-	
-	//Clase hija NodoAG
-	private class NodoAG{
-		private PLoc pd;
-		private NodoAG no;
-		private NodoAG so;
-		private NodoAG ne;
-		private NodoAG se;
-		
-		public NodoAG() {
-			pd = null;
-			no = null;
-			so = null;
-			ne = null;
-			se = null;
-		}
-		
-		public NodoAG(PLoc p) {
-			if(p!=null) {
-				pd = p;
-				no = null;
-				so = null;
-				ne = null;
-				se = null;
-			}
-		}
-		
-		//SETTERS Y GETTERS
-		//NEW
-		public void setNO(NodoAG nodo) {
-			no = nodo;
-		}
-		//NEW
-		public void setSO(NodoAG nodo) {
-			so = nodo;
-		}
-		//NEW
-		public void setNE(NodoAG nodo) {
-			ne = nodo;
-		}
-		//NEW
-		public void setSE(NodoAG nodo) {
-			se = nodo;
-		}
-		//NEW
-		public NodoAG getNO() {
-			return no;
-		}
-		//NEW
-		public NodoAG getSO() {
-			return so;
-		}
-		//NEW
-		public NodoAG getNE() {
-			return ne;
-		}
-		//NEW
-		public NodoAG getSE() {
-			return se;
-		}
-		public PLoc getPD() {
-			return pd;
-		}
-	}
-	
+	//Variables privadas
 	private NodoAG pr;		//Nodo inicial
 	
-	public ArbolG() {		//Constructor
+	//Constructor
+	public ArbolG() {
 		pr = null;
 	}
 	
-	//Lee el fichero por texto pasado por parametro y lo inserta en el arbol
+	//Lee el fichero de texto pasado por parametro y lo inserta en el arbol
 	public void leeArbol(String f) {
-		if(f != null){
-			//FileReader para leer el documento que me pasan por parametro
-			FileReader fil=null;
-			//BufferedReader para leer por lineas el documento
-			BufferedReader bu=null;
-			String linea=null;
-			//try para lanzar las funciones que puedan lanzar excepciones
-			try{
-				//le paso f para empezar a leer el fichero
-				fil=new FileReader(f);
-				//para empezar a leer linea por linea copiando el documento entero en la memoria local
-				bu=new BufferedReader(fil);
-				//leo la primera linea del buffer e ira saltando de lina con el bucle
-				linea=bu.readLine();
-				while(linea != null){
-					//mi array de datos de la linea separados por #
-					String[] info=linea.split("#");
-					if(info.length==5){
-						boolean teniaContinente=false;
-						String conti=null;
-						String pais=null;
-						String localidad=null;
-						//compruebo que la primera posicion de info sea distinta de null o vacio
-						if(info[0]!=null && !info[0].equals("")){
-							conti=info[0];
-							teniaContinente=true;
-						}
-						//compruebo que la segunda posicion de info sea distinta de null o vacio
-						if(info[1]!=null && !info[1].equals("")){
-							pais=info[1];
-						}
-						//compruebo que la tercera posicion de info sea distinta de null o vacio
-						if(info[2]!=null && !info[2].equals("")){
-							localidad=info[2];
-						}
-						//creo mi PLoc a pasandole los datos por parametro
-						PLoc a=new PLoc(conti,pais,localidad);
-						//Si se le ha asgiando el continente, ponemos la variable auxiliar a true
-						if(teniaContinente){
-							a.changeState();
-						}
-						//para separar en info en la posicion 3 para lati con un espacio
-						String[] lati=info[3].split(" ");
-						//para separar en info en la posicion 4 para longi con un espacio
-						String[] longi=info[4].split(" ");
-						//transformo los datos numericos de Strings a enteros para crear mis coordenadas
-						int latiGrados=Integer.parseInt(lati[0]);
-						int latiMinutos=Integer.parseInt(lati[1]);
-						int longiGrados=Integer.parseInt(longi[0]);
-						int longiMinutos=Integer.parseInt(longi[1]);
-						//paso de String a char
-						char letralati=lati[2].charAt(0);
-						char letralongi=longi[2].charAt(0);
-						//creo mis coordenadas
-						Coordenada miCoorde = new Coordenada(latiGrados,latiMinutos,letralati);
-						Coordenada miCoorde2 = new Coordenada(longiGrados,longiMinutos,letralongi);
-						try{
-							//le paso las Coordenadas a mi PLOC
-							a.setLatitud(miCoorde);
-							a.setLongitud(miCoorde2);
-							//lo inserto con el metodo inserta
-							inserta(a);						
-						}catch(CoordenadaExcepcion error){
-							//muestro el error
-							System.out.println(error);
-						}
+		if(f == null)
+			return;
+		
+		//Variables iniciales
+        FileReader     file_reader     = null; //Lector de fichero
+        BufferedReader buffered_reader = null; //Memoria en buffer para leer linea por linea
+        String 		   line            = null; //Cada linea que se lee del fichero
+        
+        try{
+        	//Lee el fichero
+        	file_reader     = new FileReader(f);
+        	buffered_reader = new BufferedReader(file_reader);
+            
+        	//Leemos y comprobamos la primera linea y luego continuamos con do-while
+        	line = buffered_reader.readLine();
+        	if( line != null) {
+	            do{
+	            	//Dividimos la linea leida en funcion de sus #
+	                String[] datos = line.split("#");
+	                boolean continente = false; //Variable auxiliar
+	                
+	                if(datos.length !=5)
+	                	break;
+	                
+	                //Comprobamos datos vacios
+	                if(datos[0].equals("")){
+	                	datos[0] = null;
+	                }else{
+	                	continente = true;
+	                }
+	                
+	                if(datos[1].equals(""))
+	                	datos[1] = null;
+	                
+	                if(datos[2].equals(""))
+	                	datos[2] = null;
+					
+					//Si se le ha asgiando el continente, ponemos la variable auxiliar a true
+					if(continente){
+						a.changeState();
 					}
-					//para forzar que lea la linea por cada pasada del bucle
-					linea=bu.readLine();
-				}
-			}catch(IOException o){
-				o.printStackTrace();
-			}
-			try{
-				//cierro el FileReader				
-				if(fil != null){
-					fil.close();
-				}
-				//cierro el BufferedReader
-				if(bu != null){
-					bu.close();
-				}
-			}catch(IOException c){
-				c.printStackTrace();
-			}
-		}
+					
+					//Tratamos las coordenadas
+                    String[] latitud=datos[3].split(" ");
+                    String[] longitud=datos[4].split(" ");
+                    
+                    Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
+	                
+	                try {
+                    	//Creamos el ploc a insertar
+                    	PLoc dentro = new PLoc(datos[0], datos[1], datos[2]);
+                    	
+                    	//y le pasamos las coordenadas
+                        dentro.setLatitud(latitud_coordenada);
+                        dentro.setLongitud(longitud_coordenada);
+
+                        //metemos el ploc en la lista
+                        inserta(dentro);
+
+                        //Imprimir algun error por coordenada erronea
+                    }catch(CoordenadaExcepcion e){
+                        System.out.println(e);
+                    }
+	                
+	                //Leemos la linea para continuar la lectura
+	                line=buffered_reader.readLine();
+	            }while(line != null);
+        	}
+	            
+        }catch(IOException c){
+            c.printStackTrace();
+        }
+        
+      //Despues de usarlos los cerramos
+        try{
+        	if(buffered_reader != null)
+        		buffered_reader.close();
+        	
+            if(file_reader != null)
+            	file_reader.close();
+                
+        }catch(IOException c){
+            c.printStackTrace();
+        }
 	}
 	
-	//Metodo que indica si el arbol esta vacio
+	//Si el nodo inicial del arbol esta vacio, entonces el arbol lo es
 	public boolean esVacio() {
-		boolean vacio=false;
-		if(pr==null) {
-			vacio=true;
-		}else {
-			vacio=false;
+		if(pr==null){
+			return true;
 		}
-		return vacio;
+		return false;
 	}
 	
-	//Inserta el PLoc en el arbol
-	public boolean inserta(PLoc p) {
-		//booleano que comprueba si el ploc ha sido insertado
-		boolean insertado=false;
-		//Nodo auxiliar
-		NodoAG nodoactual;
-		//si el objeto no es nulo
-		if(p!=null) {
-			//Creamos el nodo
-			NodoAG minodo = new NodoAG(p);
-			//Si el arbol es vacio lo insertamos en la primera posicion
+	public boolean inserta (PLoc p) {
+		//Comprobamos que el objeto que nos han pasado no es nulo
+		if(p == null)
+			return false;
+		
+			NodoAG nodoactual; //Nodo auxiliar para recorrer el arbol
+			NodoAG minodo 		= new NodoAG(p); //Nodo a insertar
+			boolean insertado 	= false;
+			//Si el arbol es vacio, el Ploc pasara a ser nuestro nodo inicial
 			if(esVacio()) {
 				pr = minodo;
-				insertado = true;
-			}else{
-				//sino el nodo actual es
-				nodoactual = pr;
-				//Mientras no este insertado, vamos iterando
-				while(!insertado) {
-					//Si minodo.longitud < nodoactual.longitud, es so o no
-					if(minodo.getPD().getGps()[1] < nodoactual.getPD().getGps()[1]) { //so o no
-						//si la latitud de minodo es menor, es so
-						if(minodo.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]){
-							if(nodoactual.getSO()!=null) { //so ya esta ocupada por otro nodo
+				return true;
+			}else {
+				nodoactual = pr; //Empezamos por el primer nodo
+				
+				do {
+					if(minodo.getPD().getGps()[1] < nodoactual.getPD().getGps()[1]) { //SO o NO
+						if(minodo.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]){ //SO
+							if(nodoactual.getSO()!=null) { //SO ocupado
 								nodoactual=nodoactual.getSO();
-							}else { //so no esta ocupada = actualizamos con minodo y pasa a estar insertada
+							}else { //SO libre
 								nodoactual.setSO(minodo);
 								insertado=true;
+								return true;
 							}
-						//si la latitud de mi nodo es superior, es no
-						}else { //no
-							if(nodoactual.getNO()!=null) { //no ocupada
+						}else { //NO
+							if(nodoactual.getNO()!=null) { //NO ocupado
 								nodoactual=nodoactual.getNO();
-							}else { //no no ocupada  = actualizamos con minodo y pasa a estar insertada
+							}else { //NO libre
 								nodoactual.setNO(minodo);
 								insertado=true;
+								return true;
 							}
+
 						}
-					//Si minodo.longitud > nodoactual.longitud, es se o ne
-					}else{
-						//si la latitud de minodo es menor, es se
-						if(minodo.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]){ //se
-							if(nodoactual.getSE()!=null) { //se ocupada
+						
+					}else {
+						if(minodo.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]){ //SE
+							if(nodoactual.getSE()!=null) { //SE ocupado
 								nodoactual=nodoactual.getSE();
-							}else { //se no ocupada = actualizamos con minodo y pasa a estar insertada
+							}else { //SE libre
 								nodoactual.setSE(minodo);
 								insertado=true;
+								return true;
 							}
-						//si la latitud de minodo es mayor, es ne
 						}else {
-							if(nodoactual.getNE()!=null) { //ne ocupada
+							if(nodoactual.getNE()!=null) { //NE ocupada
 								nodoactual=nodoactual.getNE();
-							}else { //ne no ocupada = actualizamos con minodo y pasa a estar insertada
+							}else { //NE libre
 								nodoactual.setNE(minodo);
 								insertado=true;
+								return true;
 							}
 						}
 					}
-				}
+				}while(!insertado); //Mientras no se haya insertado el Nodo, continuamos recorriendo el arbol
 			}
-		}
-		return insertado;
+		return false;
 	}
 	
-	//Devuelve true si encuentra al menos una ciudad  cuyo nombre coincida con el string, y realizamos un recorrido inorden
+	//Recorrido inorden
 	public boolean ciudadEnArbol(String v) {
-		//nuestro nodo actual en principio es la raiz
-		NodoAG nodoactual = pr;
-		//booleano que controla la ciudad encontrada
+		if(v == null)
+			return false;
+		
+		if(pr == null)
+			return false;
+		
 		boolean encontrada = false;
-		//Cola provisional donde guardamos los nodos hijos siguientes y con la que vamos iterando los nodos
-		Queue<NodoAG> cola = new LinkedList<NodoAG>();
-		if(v != null) {
-			//mientras el nodo actual no sea nulo (el del inicio)
-			if(nodoactual!=null) {
-				//lo anyadimos a la cola
-				cola.add(nodoactual);
-				//Mientras la cola no este vacia o no se haya encontrado la primera coincidencia
-				while(!cola.isEmpty() && !encontrada) {
-					nodoactual = cola.poll();
-					//Si encuentra la ciudad, devuelve true
-					if(nodoactual.getPD().getCiudad().equalsIgnoreCase(v)) {
-						encontrada = true;
-					}else {
-						//Si no la encuentra, mira todos los nodos derivados y los anyade a la cola
-						if(nodoactual.getSE()!=null) {
-							cola.add(nodoactual.getSE());
-						}
-						if(nodoactual.getNE()!=null) {
-							cola.add(nodoactual.getNE());
-						}
-						if(nodoactual.getSO()!=null) {
-							cola.add(nodoactual.getSO());
-						}
-						if(nodoactual.getNO()!=null) {
-							cola.add(nodoactual.getNO());
-						}
-					}
-				}
-			}	
+		NodoAG nodoactual = pr; //Empezamos el recorrido por el primer nodo
+		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar para recorrer el arbol
+
+		cola.add(nodoactual); //Anyadimos el nodo a la cola
+		
+		//Mientras la cola no este vacia o no se haya encontrado la primera coincidencia
+		while(!cola.isEmpty() && !encontrada) {
+			
+			nodoactual = cola.poll();
+			
+			if(nodoactual.getPD().getCiudad().equalsIgnoreCase(v)) {
+				encontrada = true;
+			}else {
+				comprobarHijos(cola, nodoactual);
+			}
 		}
 		return encontrada;
 	}
 	
-	//Devuelve en el treeset las ciudades que tengan el mismo pais que el ploc pasado por parametro
+	//NEW, metodo para comprobar los hijos de un nodo en todas direcciones
+	public void comprobarHijos(Queue<NodoAG> cola, NodoAG nodoactual) {
+		//Si no encuentra la ciudad en el nodo, mira todos los nodos hijos y los anyade a la cola
+		if(nodoactual.getSE()!=null) {
+			cola.add(nodoactual.getSE());
+		}
+		if(nodoactual.getNE()!=null) {
+			cola.add(nodoactual.getNE());
+		}
+		if(nodoactual.getSO()!=null) {
+			cola.add(nodoactual.getSO());
+		}
+		if(nodoactual.getNO()!=null) {
+			cola.add(nodoactual.getNO());
+		}
+	}
+	
+	//Recorrido inorden
 	public TreeSet<String> getCiudades(PLoc p){
-		//Inicializamos la variable de retorno
-		TreeSet<String> t = null;
-		//nuestro nodo actual en principio es la raiz
-		NodoAG nodoactual = pr;
-		//si no es null
-		if(p != null) {
-			t = new TreeSet<String>();
-			//Cola provisional donde guardamos los nodos hijos siguientes
-			Queue<NodoAG> cola = new LinkedList<NodoAG>();
-			//mientras el nodo actual no sea nulo (el del inicio)
-			if(nodoactual!=null) {
-				//lo anyadimos a la cola
-				cola.add(nodoactual);
-				//Mientras la cola no este vacia, la recorremos entera
-				while(!cola.isEmpty()) {
-					//Cogemos el nodo que antes se haya insertado
-					nodoactual = cola.poll();
-					//Si encuentra  el nodo con el ploc que tenga el mismo pais que el del ploc pasado por parametro, lo metemos en el treeset
-					if(nodoactual.getPD().getPais().equalsIgnoreCase(p.getPais())) {
-						t.add(nodoactual.getPD().getCiudad());
-					}else {
-						//Si no la encuentra, mira todos los nodos derivados y los anyade a la cola
-						if(nodoactual.getSE()!=null) {
-							cola.add(nodoactual.getSE());
-						}
-						if(nodoactual.getNE()!=null) {
-							cola.add(nodoactual.getNE());
-						}
-						if(nodoactual.getSO()!=null) {
-							cola.add(nodoactual.getSO());
-						}
-						if(nodoactual.getNO()!=null) {
-							cola.add(nodoactual.getNO());
-						}
-					}
-				}
+		if(p == null)
+			return false;
+		
+		if(pr == null)
+			return false;
+		
+		TreeSet<String> t = new TreeSet<String>(); //TreeSet donde guardaremos las ciudades
+		NodoAG nodoactual = pr; //Empezamos a recorrer el arbol desde el nodo raiz
+		
+		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar
+		cola.add(nodoactual);
+		
+		while(!cola.isEmpty()) {
+			nodoactual = cola.poll();
+			//Si encuentra  el nodo con el ploc que tenga el mismo pais que el del ploc pasado por parametro, lo metemos en el treeset
+			if(nodoactual.getPD().getPais().equalsIgnoreCase(p.getPais())) {
+				t.add(nodoactual.getPD().getCiudad());
+			}else {
+				comprobarHijos(cola, nodoactual);
 			}
 		}
 		return t;
 	}
 	
-	//Devuelve la ciudad mas lejana en la direccion pasada por parametro
 	public PLoc busquedaLejana(String s) {
-		//PLoc resultado
+		if(s==null || s.equals(""))
+			return false;
+		
+		if(pr == null)
+			return false;
+		
 		PLoc p = null;
-		//Nodo auxiliar
 		NodoAG nodoactual = pr;
 		NodoAG nodofinal = pr;
-		//Cola provisional donde guardamos los nodos hijos siguientes
-		Queue<NodoAG> cola = new LinkedList<NodoAG>();
-		//Miramos el string
-		if(s!=null && !s.equals("")) {
-			//Busqueda euclidea
-			//mientras el nodo actual no sea nulo (el del inicio)
-			if(nodoactual!=null) {
-				//lo anyadimos a la cola
-				cola.add(nodoactual);
-				//Mientras la cola no este vacia o no se haya encontrado la primera coincidencia
-				while(!cola.isEmpty()) {
-					//cogemos la ciudad de la cola
-					nodoactual = cola.poll();
+		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar
+		
+		//Busqueda euclidea
+		cola.add(nodoactual);
+		
+		while(!cola.isEmpty()) {
+			nodoactual = cola.poll();
+				//cogemos la ciudad de la cola
+				nodoactual = cola.poll();
+				float latitudActual = nodoactual.getPD().getGps()[1];
+				float longitudActual = nodoactual.getPD().getGps()[0];
+				float latitudFinal = nodofinal.getPD().getGps()[1];
+				float longitudFinal = nodofinal.getPD().getGps()[0];
+				
+				switch(s) {
+				case "NO":
+						//en NO buscamos el de mayor latitud y menor longitud
+						if(latitudFinal > latitudActual) {
+							if(longitudFinal < longitudActual) {
+								nodofinal = nodoactual;
+							}
+						}
+					break;
 					
-					//Comprobamos el valor de longitud y latitud de la ciudad para ver si es el mas lejano en la direccion pedida
-					//Usamos un switch
-					switch(s) {
-					case "NO":
-							//en NO buscamos el de mayor latitud y menor longitud
-							if(nodofinal.getPD().getGps()[1] > nodoactual.getPD().getGps()[1]) {
-								if(nodofinal.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]) {
-									nodofinal = nodoactual;
-								}
+				case "SO":
+						//en SO buscamos el de menor latitud y menor longitud
+						if(latitudFinal > latitudActual) {
+							if(longitudFinal > longitudActual) {
+								nodofinal = nodoactual;
 							}
-						break;
-						
-					case "SO":
-							//en SO buscamos el de menor latitud y menor longitud
-							if(nodofinal.getPD().getGps()[1] > nodoactual.getPD().getGps()[1]) {
-								if(nodofinal.getPD().getGps()[0] > nodoactual.getPD().getGps()[0]) {
-									nodofinal = nodoactual;
-								}
-							}
-						break;
-						
-					case "NE":
-							//en NE buscamos el de mayor latitud y mayor longitud
-							if(nodofinal.getPD().getGps()[1] < nodoactual.getPD().getGps()[1]) {
-								if(nodofinal.getPD().getGps()[0] < nodoactual.getPD().getGps()[0]) {
-									nodofinal = nodoactual;
-								}
-							}
-						break;
-						
-					case "SE":
-							//en NO buscamos el de menor latitud y mayor longitud
-							if(nodofinal.getPD().getGps()[1] < nodoactual.getPD().getGps()[1]) {
-								if(nodofinal.getPD().getGps()[0] > nodoactual.getPD().getGps()[0]) {
-									nodofinal = nodoactual;
-								}
-							}
-						break;
-					}
+						}
+					break;
 					
-					//Metemos sus nodos derivados en la cola para posteriores comprobaciones
-					if(nodoactual.getSE()!=null) {
-						cola.add(nodoactual.getSE());
-					}
-					if(nodoactual.getNE()!=null) {
-						cola.add(nodoactual.getNE());
-					}
-					if(nodoactual.getSO()!=null) {
-						cola.add(nodoactual.getSO());
-					}
-					if(nodoactual.getNO()!=null) {
-						cola.add(nodoactual.getNO());
-					}
+				case "NE":
+						//en NE buscamos el de mayor latitud y mayor longitud
+						if(latitudFinal < latitudActual) {
+							if(longitudFinal < longitudActual) {
+								nodofinal = nodoactual;
+							}
+						}
+					break;
+					
+				case "SE":
+						//en NO buscamos el de menor latitud y mayor longitud
+						if(latitudFinal < latitudActual) {
+							if(longitudFinal > longitudActual) {
+								nodofinal = nodoactual;
+							}
+						}
+					break;
 				}
-				//al final tendra que estar el mas lejano en la direccion indicada
-				p = nodofinal.getPD();
-			}
+				
+				comprobarHijos(cola, nodoactual);
 		}
+		
+		p = nodofinal.getPD();
+		
 		if(p == null && !esVacio()) {
 			p = pr.getPD();
 		}
 		return p;
 	}
 	
-	//Escribe el arbol siguiendo el recorrido inorden
 	public void recorridoInorden() {
+		if(esVacio())
+			return false;
+		
 		NodoAG nodoactual = pr;
-		//Si el arbol no es vacio, recorrido inorden recursivo
-		if(!esVacio()) {
-			//funcion recursiva
-			InOrden(nodoactual);
-		}
+		
+		InOrden(nodoactual); //Metodo recursivo
 	}
 	
-	//Escribe el arbol siguiendo el recorrido por niveles usando una cola. Los que entran primero anyaden sus hijos a las colas
-	//por lo que imprimiran sus nombres luego
-	public void recorridoNiveles() {
-		//Nodo actual inicial
-		NodoAG nodoactual = pr;
-		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //cola FIFO: primero que entra, primero que sale. Para el recorrido por niveles.
-		//Si el nodo no es nulo
-		if(nodoactual!=null) {
-			//comenzamos desde la raiz del arbol
-			cola.add(nodoactual);
-			//mientras la cola siga teniendo elementos
-			while(!cola.isEmpty()) {
-				//Sacamos un elemento
-				nodoactual = cola.poll();
-				//imprimimos la ciudad
-				System.out.println(nodoactual.getPD().getCiudad());
-				
-				//comprobamos si tiene hijos en todas sus direcciones, y si los tiene, los encolamos
-				if(nodoactual.getNO()!=null) { 
-					cola.add(nodoactual.getNO()); //NO
-				}
-				if(nodoactual.getSO()!=null) {
-					cola.add(nodoactual.getSO()); //SO
-				}
-				if(nodoactual.getNE()!=null) {
-					cola.add(nodoactual.getNE()); //NE
-				}
-				if(nodoactual.getSE()!=null) {
-					cola.add(nodoactual.getSE()); //SE
-				}
-			}
-		}
-	}
-	
-	//NEW: metodo recursivo para poder cambiar de nodo
+	//NEW, metodo recursivo para el recorrido inorden de un arbol
 	public void InOrden(NodoAG nodo) {
-		//Si el nodo no es nulo
+		/*if(nodo == null)
+			break;*/
 		if(nodo!=null) {
-			//subarbol izqdo
+			//Subarbol izqdo
 			if(nodo.getNO()!=null) { 
 				InOrden(nodo.getNO());
 			}
@@ -467,15 +340,91 @@ public class ArbolG extends Arbol {
 				InOrden(nodo.getSO());
 			}
 			
-			System.out.println(nodo.getPD().getCiudad()); //raiz
+			System.out.println(nodo.getPD().getCiudad()); //Raiz
 			
-			//subarbol dcho
+			//Subarbol dcho
 			if(nodo.getNE()!=null) { 
 				InOrden(nodo.getNE());
 			}
 			if(nodo.getSE()!=null) {
 				InOrden(nodo.getSE());
 			}
-		}	
+		}
+	}
+	
+	public void recorridoNiveles() {
+		if(pr == null)
+			return false;
+		
+		NodoAG nodoactual = pr; //Nodo inicial
+		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola FIFO auxiliar
+		
+		cola.add(nodoactual);
+		
+		while(!cola.isEmpty()) {
+			nodoactual = cola.poll();
+			//Imprimimos la ciudad
+			System.out.println(nodoactual.getPD().getCiudad());
+			comprobarHijosFIFO(cola, nodoactual);
+		}
+	}
+	
+	//NEW, metodo para comprobar los hijos de un nodo en todas direcciones (Cambia el orden de visita de los hijos)
+	public void comprobarHijosFIFO(Queue<NodoAG> cola, NodoAG nodo) {
+		//Comprobamos si tiene hijos en todas sus direcciones, y si los tiene, los encolamos
+		if(nodoactual.getNO()!=null) { 
+			cola.add(nodoactual.getNO()); //NO
+		}
+		if(nodoactual.getSO()!=null) {
+			cola.add(nodoactual.getSO()); //SO
+		}
+		if(nodoactual.getNE()!=null) {
+			cola.add(nodoactual.getNE()); //NE
+		}
+		if(nodoactual.getSE()!=null) {
+			cola.add(nodoactual.getSE()); //SE
+		}
+	}
+	
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+		//Clase privada NodoAG
+	private class NodoAG{
+		//Variables privadas del nodo
+		private PLoc pd;
+		private NodoAG so;
+		private NodoAG no;
+		private NodoAG se;
+		private NodoAG ne;
+		
+		//Constructor
+		public NodoAG() {
+			no = null;
+			pd = null;
+			se = null;
+			ne = null;
+			so = null;
+		}
+		
+		//Constructor
+		public NodoAG(PLoc p) {
+			if(p!=null) {
+				no = null;
+				pd = p;
+				se = null;
+				ne = null;
+				so = null;
+			}
+		}
+		
+		//Set y Get
+		public void setNO(NodoAG nodo) 	{ no = nodo;	}
+		public void setSO(NodoAG nodo) 	{ so = nodo;	}
+		public void setNE(NodoAG nodo) 	{ ne = nodo;	}
+		public void setSE(NodoAG nodo) 	{ se = nodo;	}
+		public NodoAG getNO() 			{ return no;	}
+		public NodoAG getSO() 			{ return so;	}
+		public NodoAG getNE() 			{ return ne;	}
+		public NodoAG getSE() 			{ return se;	}
+		public PLoc getPD() 			{ return pd;	}
 	}
 }
