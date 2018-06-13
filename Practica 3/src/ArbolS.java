@@ -102,6 +102,7 @@ public class ArbolS extends Arbol{
 	}
 }
 	
+	@Override
 	public boolean esVacio() {
 		if(pr==null){
 			return true;
@@ -109,7 +110,7 @@ public class ArbolS extends Arbol{
 		return false;
 	}
 	
-	//Inserta el ploc dentro del treeMap usando su pais
+	@Override //Inserta el ploc dentro del treeMap usando su pais
 	public boolean inserta(PLoc p) {
 		//Comprobamos que el objeto que nos han pasado no es nulo
 		if(p == null)
@@ -130,14 +131,15 @@ public class ArbolS extends Arbol{
 	    //Si existe, lo anyadimos ahi
     	}else {
     		t.add(p);
+			tm.put(p.getPais(), t);
 			return true;
     	}
     	
     return false;
 	}
 	
-	//Busca la ciudad en el treemap
-	public boolean ciudadEnArbol(String v) {
+	@Override //Busca la ciudad en el treemap
+	public boolean ciudadEnArbol(String v) { //Podría estar mal?
 		if(v == null)
 			return false;
 		
@@ -175,13 +177,16 @@ public class ArbolS extends Arbol{
 			TreeSet<PLoc> pel = tm.get(p.getPais());
 			//Copiamos de cada PLoc su ciudad en el TreeSet de tipo string
 			for(PLoc ciudad : pel) {
-				val.add(ciudad.getCiudad());
+				if(ciudad.getCiudad() == null)
+					val.add("x");
+				else
+					val.add(ciudad.getCiudad());
 			}
 		}
 		return val;
 	}
 	
-	//Busca el PLoc mas alejado en la direccion dada
+	@Override //Busca el PLoc mas alejado en la direccion dada
 	public PLoc busquedaLejana(String s) {
 		if(s == null)
 			return false;
@@ -218,12 +223,11 @@ public class ArbolS extends Arbol{
 			doble1	= Coord[0];
 			doble2	= Coord[1];
 			
-			if(doble1 > doble2) {
+			if(doble1 > doble2) 
 				nueva = localidades;
-			}
-			else {
+			else
 				nueva = resultado;
-			}
+			
 		}else{
 			nueva = localidades;
 		}
@@ -295,19 +299,17 @@ public class ArbolS extends Arbol{
 		//Si el treeMap contiene dicho pais
 		if(tm.containsKey(p)) {
 			//Lo borramos y devolvemos true
-			tm.remove(p);
-			return true;
+			if(tm.remove(p)!=null)
+				return true;
 		}
 		return false;
 	}
 	
+	//Devuelve el keyset de los paises
 	public Set<String> getPaises(){
 		if(esVacio())
 			return null;
-		
-		Set<String> keys = null;
-		//Devuelve el keyset de los paises
-		keys = tm.keySet();
-		return keys;
+		else
+			return tm.keySet();
 	}
 }
