@@ -1,6 +1,4 @@
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
 
 public class BuscaLocalizacion2 {
 	
@@ -9,8 +7,24 @@ public class BuscaLocalizacion2 {
 			ArbolG arbol = new ArbolG();
 			arbol.leeArbol(args[0]);
 			
-			//FALTA POR HACER ME ESTOY LIANDO MUCHO
-			//MORIRME QUIERO
+			double lati 			= 0.0;
+			double longi 			= 0.0;
+			double rang 			= 0.0;
+			String latitud			= args[1];
+			String longitud			= args[2];
+			String rango 			= args[3];
+			ArrayList<PLoc> yay	= new ArrayList<PLoc>();
+			TreeSet<PLoc> ciudades 	= arbol.getCiudadesPLoc();
+			
+			lati = Double.parseDouble(latitud);
+			longi = Double.parseDouble(longitud);
+			rang = Double.parseDouble(rango);
+	
+			//Ordeno el ArrayList en orden ascendente
+			Collections.sort(yay);
+			
+			busqueda(ciudades, yay, lati, longi, rang);
+			mostrar3(yay);
 			
 		}else if(args.length==2) { //Busqueda por pais
 			ArbolS arbol = new ArbolS();
@@ -24,12 +38,34 @@ public class BuscaLocalizacion2 {
 		}
 	}
 	
+	public static void busqueda(TreeSet<PLoc> ciudades, ArrayList<PLoc> yay, double lati, double longi, double rang) {
+		for(PLoc ploc : ciudades) {
+			if(ploc.getGps()[0] >= lati - rang) {
+				if(ploc.getGps()[0] <= rang + lati && ploc.getGps()[1] >= longi - rang) {
+					if(ploc.getGps()[1] <= rang + longi) {
+						yay.add(ploc);
+					}
+				}
+			}
+		}
+	}
+	
+	public static void mostrar3(ArrayList<PLoc> yay) {
+		if(yay.size() == 0) {
+			System.out.println("NO HAY SALIDA");
+		}else {
+			for(int i = 0; i < yay.size(); i++) {
+				yay.get(i).escribeInfoGps();
+			}
+		}
+	}
+	
 	public static void buscar(ArbolS arbolillo) {
 		for(Map.Entry<String, TreeSet<PLoc>> paises : arbolillo.getTreeMap().entrySet()) {
 			PLoc p = new PLoc(null, paises.getKey(), null);
 			TreeSet<String> ciudades = arbolillo.getCiudades(p);
 			Iterator<String> iterator = ciudades.iterator();
-			mostrar(ciudades, paises);
+			System.out.print(paises.getKey()+" "+"("+ciudades.size()+")"+": ");
 			String aux = iterator.next();
 			System.out.print(aux);
 			
@@ -51,10 +87,6 @@ public class BuscaLocalizacion2 {
 				System.out.print("- "+iterator.next());
 		}
 		System.out.println();
-	}
-	
-	public static void mostrar(TreeSet<String> ciudades, TreeSet<PLoc> paises) {
-		System.out.print(paises.getKey()+" "+"("+ciudades.size()+")"+": ");
 	}
 	
 	public static void mostrar2(String[] args, TreeSet<String> ciudades) {

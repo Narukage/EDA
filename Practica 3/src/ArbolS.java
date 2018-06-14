@@ -51,9 +51,11 @@ public class ArbolS extends Arbol{
 	                if(datos[2].equals(""))
 	                	datos[2] = null;
 	                
+	                PLoc a=new PLoc(datos[0],datos[1],datos[2]);
+	                
 	                //Si se le ha asgiando el continente, ponemos la variable auxiliar a true
 					if(continente){
-						a.changeState();
+						a.set_no_tenia_continente(false);
 					}
 					
 					//Tratamos las coordenadas
@@ -83,6 +85,7 @@ public class ArbolS extends Arbol{
 	                line=buffered_reader.readLine();
 	                
 	            }while(line!=null);
+        	}
 	            
         }catch(IOException o){
 				o.printStackTrace();
@@ -99,14 +102,13 @@ public class ArbolS extends Arbol{
         }catch(IOException c){
             c.printStackTrace();
         }
-	}
 }
 	
 	@Override
 	public boolean esVacio() {
-		if(pr==null){
+		if(tm == null || tm.isEmpty())
 			return true;
-		}
+		
 		return false;
 	}
 	
@@ -134,8 +136,6 @@ public class ArbolS extends Arbol{
 			tm.put(p.getPais(), t);
 			return true;
     	}
-    	
-    return false;
 	}
 	
 	@Override //Busca la ciudad en el treemap
@@ -163,10 +163,10 @@ public class ArbolS extends Arbol{
 	//Devuelve las ciudades de un pais en un TreeSet
 	public TreeSet<String> getCiudades(PLoc p) {
 		if(p == null)
-			return false;
+			return null;
 		
 		if(esVacio())
-			return false;
+			return null;
 		
 		//Generamos el treeSet auxiliar
 		TreeSet<String> val = new TreeSet<String>();
@@ -189,7 +189,7 @@ public class ArbolS extends Arbol{
 	@Override //Busca el PLoc mas alejado en la direccion dada
 	public PLoc busquedaLejana(String s) {
 		if(s == null)
-			return false;
+			return null;
 		
 		PLoc pret = null;
 		
@@ -253,39 +253,39 @@ public class ArbolS extends Arbol{
 	
 	public double[] Distancias(PLoc auxiliar,PLoc bucle, String s){
 		
+		double Dist1 = 0.0;
+		double Dist2 = 0.0;
+		double[] aux = new double[2];
+		
 		switch(s) {
 		
 		case "NO":
-					double[] aux1 = new double[2];
-					aux1[0] = 90;
-					aux1[1] = -180;
-					DistEu1 = DistanciaEuclidea(auxiliar, aux1);
-					DistEu2 = DistanciaEuclidea(bucle, aux1);;
+					aux[0] = 90;
+					aux[1] = -180;
+					Dist1 = DistanciaEuclidea(auxiliar, aux);
+					Dist2 = DistanciaEuclidea(bucle, aux);;
 					break;
 		case "SO":
-					double[] aux1 = new double[2];
-					aux1[0] = -90;
-					aux1[1] = -180;
-					DistEu1 = DistanciaEuclidea(auxiliar, aux1);
-					DistEu2 = DistanciaEuclidea(bucle, aux1);
+					aux[0] = -90;
+					aux[1] = -180;
+					Dist1 = DistanciaEuclidea(auxiliar, aux);
+					Dist2 = DistanciaEuclidea(bucle, aux);
 					break;
 		case "SE":
-					double[] aux1 = new double[2];
-					aux1[0] = -90;
-					aux1[1] = 180;
-					DistEu1 = DistanciaEuclidea(auxiliar, aux1);
-					DistEu2 = DistanciaEuclidea(bucle, aux1);
+					aux[0] = -90;
+					aux[1] = 180;
+					Dist1 = DistanciaEuclidea(auxiliar, aux);
+					Dist2 = DistanciaEuclidea(bucle, aux);
 					break;
 		case "NE":
-					double[] aux1 = new double[2];
-					aux1[0] = 90;
-					aux1[1] = 180;
-					DistEu1 = DistanciaEuclidea(auxiliar, aux1);
-					DistEu2 = DistanciaEuclidea(bucle, aux1);
+					aux[0] = 90;
+					aux[1] = 180;
+					Dist1 = DistanciaEuclidea(auxiliar, aux);
+					Dist2 = DistanciaEuclidea(bucle, aux);
 					break;
 		}
 		
-		double[] respuesta={DistEu1, DistEu2};
+		double[] respuesta={Dist1, Dist2};
 		return respuesta;
 	}
 	
@@ -305,11 +305,29 @@ public class ArbolS extends Arbol{
 		return false;
 	}
 	
-	//Devuelve el keyset de los paises
+	//Devuelve la coleccion de los paises
 	public Set<String> getPaises(){
 		if(esVacio())
 			return null;
 		else
 			return tm.keySet();
+	}
+	
+	//NEW, busca un pais con el nombre pasado por parametro
+	public boolean buscarPais(String v) {
+		if(v == null)
+			return false;
+		
+		if(esVacio())
+			return false;
+		
+		if(tm.containsKey(v)){
+			return true;
+		}	
+	return false;
+	}
+	
+	public TreeMap<String , TreeSet<PLoc>> getTreeMap(){
+		return tm;
 	}
 }

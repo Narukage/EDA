@@ -6,8 +6,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeSet;
 
-import ArbolG.NodoAG;
-
 public class ArbolG extends Arbol {
 	//Variables privadas
 	private NodoAG pr;		//Nodo inicial
@@ -56,9 +54,10 @@ public class ArbolG extends Arbol {
 	                if(datos[2].equals(""))
 	                	datos[2] = null;
 					
-					//Si se le ha asgiando el continente, ponemos la variable auxiliar a true
+	                PLoc a=new PLoc(datos[0],datos[1],datos[2]);
+	                
 					if(continente){
-						a.changeState();
+						a.set_no_tenia_continente(false);
 					}
 					
 					//Tratamos las coordenadas
@@ -108,9 +107,9 @@ public class ArbolG extends Arbol {
 	
 	//Si el nodo inicial del arbol esta vacio, entonces el arbol lo es
 	public boolean esVacio() {
-		if(pr==null){
+		if(pr==null)
 			return true;
-		}
+		
 		return false;
 	}
 	
@@ -196,7 +195,18 @@ public class ArbolG extends Arbol {
 			if(nodoactual.getPD().getCiudad().equalsIgnoreCase(v)) {
 				encontrada = true;
 			}else {
-				comprobarHijos(cola, nodoactual);
+				if(nodoactual.getSO()!=null) {
+					cola.add(nodoactual.getSO());
+				}
+				if(nodoactual.getNO()!=null) {
+					cola.add(nodoactual.getNO());
+				}
+				if(nodoactual.getSE()!=null) {
+					cola.add(nodoactual.getSE());
+				}
+				if(nodoactual.getNE()!=null) {
+					cola.add(nodoactual.getNE());
+				}			
 			}
 		}
 		return encontrada;
@@ -204,9 +214,10 @@ public class ArbolG extends Arbol {
 	
 	//NEW, metodo para comprobar los hijos de un nodo en todas direcciones
 	public void comprobarHijos(Queue<NodoAG> cola, NodoAG nodoactual) {
+		
 		//Si no encuentra la ciudad en el nodo, mira todos los nodos hijos y los anyade a la cola
-		if(nodoactual.getSE()!=null) {
-			cola.add(nodoactual.getSE());
+		if(nodoactual.getNO()!=null) {
+			cola.add(nodoactual.getNO());
 		}
 		if(nodoactual.getNE()!=null) {
 			cola.add(nodoactual.getNE());
@@ -214,23 +225,23 @@ public class ArbolG extends Arbol {
 		if(nodoactual.getSO()!=null) {
 			cola.add(nodoactual.getSO());
 		}
-		if(nodoactual.getNO()!=null) {
-			cola.add(nodoactual.getNO());
-		}
+		if(nodoactual.getSE()!=null) {
+			cola.add(nodoactual.getSE());
+		}	
 	}
 	
 	//Recorrido inorden
 	public TreeSet<String> getCiudades(PLoc p){
 		if(p == null)
-			return false;
+			return null;
 		
 		if(pr == null)
-			return false;
+			return null;
 		
-		TreeSet<String> t = new TreeSet<String>(); //TreeSet donde guardaremos las ciudades
-		NodoAG nodoactual = pr; //Empezamos a recorrer el arbol desde el nodo raiz
+		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
+		TreeSet<String> t 	= new TreeSet<String>(); //TreeSet donde guardaremos las ciudades
+		NodoAG nodoactual 	= pr; //Empezamos a recorrer el arbol desde el nodo raiz
 		
-		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar
 		cola.add(nodoactual);
 		
 		while(!cola.isEmpty()) {
@@ -239,23 +250,58 @@ public class ArbolG extends Arbol {
 			if(nodoactual.getPD().getPais().equalsIgnoreCase(p.getPais())) {
 				t.add(nodoactual.getPD().getCiudad());
 			}else {
-				comprobarHijos(cola, nodoactual);
+				comprobarHijosFIFO(cola, nodoactual);
 			}
 		}
 		return t;
 	}
 	
+	public TreeSet<PLoc> getCiudadesPLoc(){
+		if(pr == null)
+			return null;
+		
+		TreeSet<PLoc> ciudades 	= new TreeSet<PLoc>(); //TreeSet donde guardaremos las ciudades
+		NodoAG nodoactual		= pr; ////Empezamos a recorrer el arbol desde el nodo raiz
+		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
+		
+		cola.add(nodoactual);
+		ciudades.add(nodoactual.pd);
+		
+		while(!cola.isEmpty()) {
+			nodoactual = cola.poll();
+			ciudades.add(nodoactual.getPD());		
+			comprobarHijos2(cola, nodoactual);
+		}
+		return ciudades;
+	}
+	
+	public void comprobarHijos2(Queue<NodoAG> cola, NodoAG nodoactual) {
+		//Comprobamos los hijos
+		if(nodoactual.getNO()!=null) { 
+			cola.add(nodoactual.getNO()); //NO
+		}
+		if(nodoactual.getNE()!=null) {
+			cola.add(nodoactual.getNE()); //NE
+		}
+		if(nodoactual.getSE()!=null) {
+			cola.add(nodoactual.getSE()); //SE
+		}
+		if(nodoactual.getSO()!=null) {
+			cola.add(nodoactual.getSO()); //SO
+		}
+	}
+	
 	public PLoc busquedaLejana(String s) {
 		if(s==null || s.equals(""))
-			return false;
+			return null;
 		
 		if(pr == null)
-			return false;
+			return null;
 		
-		PLoc p = null;
-		NodoAG nodoactual = pr;
-		NodoAG nodofinal = pr;
-		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar
+		PLoc p 				= null;
+		NodoAG nodoactual 	= pr;
+		NodoAG nodofinal	= pr;
+		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
 		
 		//Busqueda euclidea
 		cola.add(nodoactual);
@@ -264,12 +310,14 @@ public class ArbolG extends Arbol {
 			nodoactual = cola.poll();
 				//cogemos la ciudad de la cola
 				nodoactual = cola.poll();
-				float latitudActual = nodoactual.getPD().getGps()[1];
-				float longitudActual = nodoactual.getPD().getGps()[0];
-				float latitudFinal = nodofinal.getPD().getGps()[1];
-				float longitudFinal = nodofinal.getPD().getGps()[0];
+				
+				double latitudActual 	= nodoactual.getPD().getGps()[1];
+				double longitudActual 	= nodoactual.getPD().getGps()[0];
+				double latitudFinal		= nodofinal.getPD().getGps()[1];
+				double longitudFinal 	= nodofinal.getPD().getGps()[0];
 				
 				switch(s) {
+				
 				case "NO":
 						//en NO buscamos el de mayor latitud y menor longitud
 						if(latitudFinal > latitudActual) {
@@ -319,20 +367,18 @@ public class ArbolG extends Arbol {
 	}
 	
 	public void recorridoInorden() {
-		if(esVacio())
-			return false;
+		if(!esVacio()) {
+			
+			NodoAG nodoactual = pr;
 		
-		NodoAG nodoactual = pr;
-		
-		InOrden(nodoactual); //Metodo recursivo
+			InOrden(nodoactual); //Metodo recursivo recorrido InOrden
+		}
 	}
 	
 	//NEW, metodo recursivo para el recorrido inorden de un arbol
 	public void InOrden(NodoAG nodo) {
-		/*if(nodo == null)
-			break;*/
 		if(nodo!=null) {
-			//Subarbol izqdo
+			//Subarbol izquierdo
 			if(nodo.getNO()!=null) { 
 				InOrden(nodo.getNO());
 			}
@@ -340,9 +386,9 @@ public class ArbolG extends Arbol {
 				InOrden(nodo.getSO());
 			}
 			
-			System.out.println(nodo.getPD().getCiudad()); //Raiz
+			System.out.println(nodo.getPD().getCiudad()); //Nodo Raiz
 			
-			//Subarbol dcho
+			//Subarbol derecho
 			if(nodo.getNE()!=null) { 
 				InOrden(nodo.getNE());
 			}
@@ -353,24 +399,23 @@ public class ArbolG extends Arbol {
 	}
 	
 	public void recorridoNiveles() {
-		if(pr == null)
-			return false;
+		if(pr != null) {
 		
-		NodoAG nodoactual = pr; //Nodo inicial
-		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola FIFO auxiliar
-		
-		cola.add(nodoactual);
-		
-		while(!cola.isEmpty()) {
-			nodoactual = cola.poll();
-			//Imprimimos la ciudad
-			System.out.println(nodoactual.getPD().getCiudad());
-			comprobarHijosFIFO(cola, nodoactual);
+			NodoAG nodoactual = pr; //Nodo inicial
+			Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola FIFO auxiliar
+			
+			cola.add(nodoactual);
+			
+			while(!cola.isEmpty()) {
+				nodoactual = cola.poll();
+				System.out.println(nodoactual.getPD().getCiudad());
+				comprobarHijosFIFO(cola, nodoactual);
+			}
 		}
 	}
 	
 	//NEW, metodo para comprobar los hijos de un nodo en todas direcciones (Cambia el orden de visita de los hijos)
-	public void comprobarHijosFIFO(Queue<NodoAG> cola, NodoAG nodo) {
+	public void comprobarHijosFIFO(Queue<NodoAG> cola, NodoAG nodoactual) {
 		//Comprobamos si tiene hijos en todas sus direcciones, y si los tiene, los encolamos
 		if(nodoactual.getNO()!=null) { 
 			cola.add(nodoactual.getNO()); //NO

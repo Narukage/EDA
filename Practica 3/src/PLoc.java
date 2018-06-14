@@ -1,7 +1,7 @@
 import java.util.*;
 import java.text.*;
 
-public class PLoc {
+public class PLoc implements Comparable<PLoc>{
 	//Variables privadas
     private String continente;
     private String pais;
