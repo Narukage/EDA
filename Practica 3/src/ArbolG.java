@@ -1,8 +1,9 @@
-
+//DNI MIGUEL HERMIDA CORES
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.TreeSet;
 
@@ -64,7 +65,7 @@ public class ArbolG extends Arbol {
                     String[] latitud=datos[3].split(" ");
                     String[] longitud=datos[4].split(" ");
                     
-                    Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+                    Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[1]),  latitud[2].charAt(0));
 	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
 	                
 	                try {
@@ -118,7 +119,7 @@ public class ArbolG extends Arbol {
 		if(p == null)
 			return false;
 		
-			NodoAG nodoactual; //Nodo auxiliar para recorrer el arbol
+			NodoAG nodoactual	= null; //Nodo auxiliar para recorrer el arbol
 			NodoAG minodo 		= new NodoAG(p); //Nodo a insertar
 			boolean insertado 	= false;
 			//Si el arbol es vacio, el Ploc pasara a ser nuestro nodo inicial
@@ -195,22 +196,12 @@ public class ArbolG extends Arbol {
 			if(nodoactual.getPD().getCiudad().equalsIgnoreCase(v)) {
 				encontrada = true;
 			}else {
-				if(nodoactual.getSO()!=null) {
-					cola.add(nodoactual.getSO());
-				}
-				if(nodoactual.getNO()!=null) {
-					cola.add(nodoactual.getNO());
-				}
-				if(nodoactual.getSE()!=null) {
-					cola.add(nodoactual.getSE());
-				}
-				if(nodoactual.getNE()!=null) {
-					cola.add(nodoactual.getNE());
-				}			
+				comprobarHijos(cola, nodoactual);
 			}
 		}
 		return encontrada;
-	}
+}
+	
 	
 	//NEW, metodo para comprobar los hijos de un nodo en todas direcciones
 	public void comprobarHijos(Queue<NodoAG> cola, NodoAG nodoactual) {
@@ -230,7 +221,7 @@ public class ArbolG extends Arbol {
 		}	
 	}
 	
-	//Recorrido inorden
+	@Override
 	public TreeSet<String> getCiudades(PLoc p){
 		if(p == null)
 			return null;
@@ -238,10 +229,10 @@ public class ArbolG extends Arbol {
 		if(pr == null)
 			return null;
 		
-		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
-		TreeSet<String> t 	= new TreeSet<String>(); //TreeSet donde guardaremos las ciudades
-		NodoAG nodoactual 	= pr; //Empezamos a recorrer el arbol desde el nodo raiz
+		TreeSet<String> t = new TreeSet<String>(); //TreeSet donde guardaremos las ciudades
+		NodoAG nodoactual = pr; //Empezamos a recorrer el arbol desde el nodo raiz
 		
+		Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola auxiliar
 		cola.add(nodoactual);
 		
 		while(!cola.isEmpty()) {
@@ -250,11 +241,11 @@ public class ArbolG extends Arbol {
 			if(nodoactual.getPD().getPais().equalsIgnoreCase(p.getPais())) {
 				t.add(nodoactual.getPD().getCiudad());
 			}else {
-				comprobarHijosFIFO(cola, nodoactual);
+				comprobarHijos(cola, nodoactual);
 			}
 		}
 		return t;
-	}
+}
 	
 	public TreeSet<PLoc> getCiudadesPLoc(){
 		if(pr == null)
@@ -262,7 +253,7 @@ public class ArbolG extends Arbol {
 		
 		TreeSet<PLoc> ciudades 	= new TreeSet<PLoc>(); //TreeSet donde guardaremos las ciudades
 		NodoAG nodoactual		= pr; ////Empezamos a recorrer el arbol desde el nodo raiz
-		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
+		Queue<NodoAG> cola 		= new LinkedList<NodoAG>(); //Cola auxiliar
 		
 		cola.add(nodoactual);
 		ciudades.add(nodoactual.pd);
@@ -291,6 +282,60 @@ public class ArbolG extends Arbol {
 		}
 	}
 	
+	public double[] Distancias(PLoc auxiliar,PLoc bucle, String s){
+		double[] aux = new double[2];		
+		double Dist1 = 0.0;
+		double Dist2 = 0.0;
+		
+			switch(s) {
+				
+				case "NO":
+							aux[0] = 90;
+							aux[1] = -180;
+							Dist1 = DistanciaEuclidea(auxiliar, aux);
+							Dist2 = DistanciaEuclidea(bucle, aux);;
+							break;
+				case "SO":
+							aux[0] = -90;
+							aux[1] = -180;
+							Dist1 = DistanciaEuclidea(auxiliar, aux);
+							Dist2 = DistanciaEuclidea(bucle, aux);
+							break;
+				case "SE":
+							aux[0] = -90;
+							aux[1] = 180;
+							Dist1 = DistanciaEuclidea(auxiliar, aux);
+							Dist2 = DistanciaEuclidea(bucle, aux);
+							break;
+				case "NE":
+							aux[0] = 90;
+							aux[1] = 180;
+							Dist1 = DistanciaEuclidea(auxiliar, aux);
+							Dist2 = DistanciaEuclidea(bucle, aux);
+							break;
+			}
+				
+				double[] respuesta={Dist1, Dist2};
+				return respuesta;
+			}
+	
+	public double DistanciaEuclidea(PLoc aux1, double[] Array3){
+						
+			if (aux1 == null)
+				return 0.0;
+				
+				double DistEuclidea = 0.0;
+					
+				double[] Array1 = aux1.getGps();
+				double restaAux = Array1[0] - Array3[0];
+				double resta2Aux = Array1[1] - Array3[1];
+					
+				DistEuclidea = Math.sqrt(Math.pow(restaAux, 2) + Math.pow(resta2Aux, 2));
+				
+			return DistEuclidea;
+				
+		}
+	
 	public PLoc busquedaLejana(String s) {
 		if(s==null || s.equals(""))
 			return null;
@@ -298,73 +343,43 @@ public class ArbolG extends Arbol {
 		if(pr == null)
 			return null;
 		
-		PLoc p 				= null;
 		NodoAG nodoactual 	= pr;
-		NodoAG nodofinal	= pr;
-		Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola auxiliar
+		PLoc resultado		= null;
 		
-		//Busqueda euclidea
-		cola.add(nodoactual);
+		resultado = busqueda(s, pr);
 		
-		while(!cola.isEmpty()) {
-			nodoactual = cola.poll();
-				//cogemos la ciudad de la cola
-				nodoactual = cola.poll();
-				
-				double latitudActual 	= nodoactual.getPD().getGps()[1];
-				double longitudActual 	= nodoactual.getPD().getGps()[0];
-				double latitudFinal		= nodofinal.getPD().getGps()[1];
-				double longitudFinal 	= nodofinal.getPD().getGps()[0];
-				
-				switch(s) {
-				
-				case "NO":
-						//en NO buscamos el de mayor latitud y menor longitud
-						if(latitudFinal > latitudActual) {
-							if(longitudFinal < longitudActual) {
-								nodofinal = nodoactual;
-							}
-						}
-					break;
-					
-				case "SO":
-						//en SO buscamos el de menor latitud y menor longitud
-						if(latitudFinal > latitudActual) {
-							if(longitudFinal > longitudActual) {
-								nodofinal = nodoactual;
-							}
-						}
-					break;
-					
-				case "NE":
-						//en NE buscamos el de mayor latitud y mayor longitud
-						if(latitudFinal < latitudActual) {
-							if(longitudFinal < longitudActual) {
-								nodofinal = nodoactual;
-							}
-						}
-					break;
-					
-				case "SE":
-						//en NO buscamos el de menor latitud y mayor longitud
-						if(latitudFinal < latitudActual) {
-							if(longitudFinal > longitudActual) {
-								nodofinal = nodoactual;
-							}
-						}
-					break;
-				}
-				
-				comprobarHijos(cola, nodoactual);
+		return resultado;
+		}
+	
+	public PLoc busqueda(String s, NodoAG nodoactual) {
+		PLoc resultado		= null;
+		PLoc auxiliar		= null;
+		double[] res		= null;
+		
+		if(nodoactual != null) {		
+			resultado = nodoactual.pd;
+			auxiliar = busqueda(s, nodoactual.no);
+			res = llamada(res, auxiliar, resultado, s);
+			auxiliar = busqueda(s, nodoactual.ne);
+			res = llamada(res, auxiliar, resultado, s);
+			auxiliar = busqueda(s, nodoactual.so);
+			res = llamada(res, auxiliar, resultado, s);
+			auxiliar = busqueda(s, nodoactual.se);
+			res = llamada(res, auxiliar, resultado, s);
+			
+			if(res[0] <= res[1]) {
+				resultado = auxiliar;
+			}
 		}
 		
-		p = nodofinal.getPD();
-		
-		if(p == null && !esVacio()) {
-			p = pr.getPD();
-		}
-		return p;
+		return resultado;
 	}
+	
+	public double[] llamada(double[] res, PLoc auxiliar, PLoc resultado, String s) {
+		res = Distancias(auxiliar, resultado, s);
+		return res;
+	}
+
 	
 	public void recorridoInorden() {
 		if(!esVacio()) {
@@ -401,14 +416,19 @@ public class ArbolG extends Arbol {
 	public void recorridoNiveles() {
 		if(pr != null) {
 		
-			NodoAG nodoactual = pr; //Nodo inicial
-			Queue<NodoAG> cola = new LinkedList<NodoAG>(); //Cola FIFO auxiliar
+			NodoAG nodoactual	= pr; //Nodo inicial
+			Queue<NodoAG> cola 	= new LinkedList<NodoAG>(); //Cola FIFO auxiliar
 			
 			cola.add(nodoactual);
 			
-			while(!cola.isEmpty()) {
+			while(!cola.isEmpty()) {		
 				nodoactual = cola.poll();
-				System.out.println(nodoactual.getPD().getCiudad());
+				
+				if(nodoactual.pd.getCiudad() == null) {
+					System.out.println("x");
+				}else {
+					System.out.println(nodoactual.getPD().getCiudad());
+				}
 				comprobarHijosFIFO(cola, nodoactual);
 			}
 		}

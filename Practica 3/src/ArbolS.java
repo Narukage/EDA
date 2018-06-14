@@ -1,4 +1,4 @@
-
+//DNI MIGUEL HERMIDA CORES
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -44,7 +44,6 @@ public class ArbolS extends Arbol{
 	                }else{
 	                	continente = true;
 	                }
-	                
 	                if(datos[1].equals(""))
 	                	datos[1] = null;
 	                
@@ -62,18 +61,17 @@ public class ArbolS extends Arbol{
                     String[] latitud=datos[3].split(" ");
                     String[] longitud=datos[4].split(" ");
                     
-                    Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+                    Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[1]),  latitud[2].charAt(0));
 	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
 	                
+	                //Creamos el ploc a insertar
+                	PLoc dentro = new PLoc(datos[0], datos[1], datos[2]);
+                	
 	                //Imprimir algun error por coordenada erronea
-	                try{
-	                	//Creamos el ploc a insertar
-                    	PLoc dentro = new PLoc(datos[0], datos[1], datos[2]);
-                    	
+	                try{                    	
                     	//y le pasamos las coordenadas
                         dentro.setLatitud(latitud_coordenada);
                         dentro.setLongitud(longitud_coordenada);
-
                         //metemos el ploc en la lista
                         inserta(dentro);
                         
@@ -139,16 +137,16 @@ public class ArbolS extends Arbol{
 	}
 	
 	@Override //Busca la ciudad en el treemap
-	public boolean ciudadEnArbol(String v) { //Podría estar mal?
+	public boolean ciudadEnArbol(String v) {
 		if(v == null)
 			return false;
 		
 		if(esVacio())
 			return false;
 		
-		//Recorremos  el TreeMap entero buscando por todos los paises
+		//Recorremos  el TreeMap entero
 		for(Map.Entry<String, TreeSet<PLoc>> paises : tm.entrySet()) {
-			//Generamos un Ploc auxiliar con cada pais
+			//Ploc auxiliar
 			PLoc p = new PLoc(null, paises.getKey(), null);
 			//Recogemos todas las ciudades con ese pais
 			TreeSet<String> ciudades = getCiudades(p);
@@ -160,7 +158,7 @@ public class ArbolS extends Arbol{
 		return false;
 	}
 	
-	//Devuelve las ciudades de un pais en un TreeSet
+	//Devuelve las ciudades de un pais
 	public TreeSet<String> getCiudades(PLoc p) {
 		if(p == null)
 			return null;
