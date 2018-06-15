@@ -1,4 +1,4 @@
-//DNI MIGUEL HERMIDA CORES
+//DNI 77400533J, MIGUEL HERMIDA CORES
 import java.util.*;
 
 public class BuscaLocalizacion2 {

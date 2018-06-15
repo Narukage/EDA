@@ -1,4 +1,4 @@
-//DNI MIGUEL HERMIDA CORES
+//DNI 77400533J, MIGUEL HERMIDA CORES
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
