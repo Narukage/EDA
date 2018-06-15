@@ -1,3 +1,4 @@
+//DNI 77400533J, MIGUEL HERMIDA CORES
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,7 +49,7 @@ public class Continente {
                     String[] latitud=datos[3].split(" ");
                     String[] longitud=datos[4].split(" ");
                     
-	                Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+	                Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[1]),  latitud[2].charAt(0));
 	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
                     try {
                     	//Creamos el ploc a insertar
@@ -595,7 +596,7 @@ public class Continente {
 		Atlas atlas = new Atlas();
 		
 		//Si se ha pasado como parametro un fichero
-		if(args.length > 0 && args[0]!=null)
+		if(args.length == 0 || ( args.length > 0 && args[0] == null))
 			return;
 		
 		//leer los datos en atlas

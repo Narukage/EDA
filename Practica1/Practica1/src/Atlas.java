@@ -1,3 +1,4 @@
+//DNI 77400533J, MIGUEL HERMIDA CORES
 import java.io.*;
 
 public class Atlas {
@@ -75,7 +76,7 @@ public class Atlas {
                     String[] latitud=datos[3].split(" ");
                     String[] longitud=datos[4].split(" ");
                     
-	                Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[0]),  latitud[2].charAt(0));
+	                Coordenada latitud_coordenada  = new Coordenada(Integer.parseInt(latitud[0]),  Integer.parseInt(latitud[1]),  latitud[2].charAt(0));
 	                Coordenada longitud_coordenada = new Coordenada(Integer.parseInt(longitud[0]), Integer.parseInt(longitud[1]), longitud[2].charAt(0));
                     try {
                     	//Creamos el ploc a insertar
@@ -130,7 +131,7 @@ public class Atlas {
         int y = (f.getLongitud().getPos() == 'E') ? f.getLongitud().getGrados()+180 : -f.getLongitud().getGrados()+180;
 
         //Guardianes de posicion: comprobamos q esta dentro de la matriz y que la posicion esta vacia
-        if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        if(x < 0 || x >= local.length || y < 0 || y >= local[0].length)
         	return null;
         
         //Si no hay nada, devuelve nulo
@@ -153,7 +154,7 @@ public class Atlas {
         int y = (f.getLongitud().getPos() == 'E') ? f.getLongitud().getGrados()+180 : -f.getLongitud().getGrados()+180;
 
         //Guardianes de posicion: comprobamos q esta dentro de la matriz y que la posicion esta vacia
-        if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        if(x < 0 || x >= local.length || y < 0 || y >= local[0].length)
         {
         	System.out.println("NO ES DE ESTE PLANETA");
     		return;
@@ -165,7 +166,7 @@ public class Atlas {
         	for(int j = -(n)+y; j < n+1+y; j++)
         	{
         		//Si esta fuera del area, solo se imprimen los puntos
-        		if(x < 0 || x > local.length || y < 0 || y > local[0].length)
+        		if(i < 0 || j > local.length || j < 0 || j >= local[0].length)
         		{
         			System.out.print(".");
         		}
@@ -186,7 +187,11 @@ public class Atlas {
         				else
         				{
         					//Y finalmente el valor autentico
-        					System.out.print(local[x][y].getCiudad().charAt(0));
+        					if(local[i][j]!=null) {
+        						System.out.print(local[i][j].getCiudad().charAt(0));
+        					}else {
+        						System.out.print(".");
+        					}
         				}
         			}
         		}
